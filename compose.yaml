@@ -1,0 +1,42 @@
+name: kudosuco
+services:
+  db:
+    image: postgres:18
+    environment:
+      POSTGRES_DB: kudos
+      POSTGRES_USER: kudos
+      POSTGRES_PASSWORD: ${DATABASE_PASSWORD:?Configura DATABASE_PASSWORD}
+    ports:
+      - "127.0.0.1:${DATABASE_PORT:-55433}:5432"
+    volumes:
+      - postgres-datos:/var/lib/postgresql
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U kudos -d kudos"]
+      interval: 2s
+      timeout: 3s
+      retries: 30
+  backend:
+    build: ./backend
+    depends_on:
+      db:
+        condition: service_healthy
+    environment:
+      DATABASE_URL: jdbc:postgresql://db:5432/kudos
+      DATABASE_USER: kudos
+      DATABASE_PASSWORD: ${DATABASE_PASSWORD:?Configura DATABASE_PASSWORD}
+      KUDOS_DEMO: ${KUDOS_DEMO:-1}
+      KUDOS_EMAIL_DOMAIN: ${KUDOS_EMAIL_DOMAIN:-uco.edu.co}
+      KUDOS_ORIGIN: ${KUDOS_ORIGIN:-}
+      KUDOS_VERIFICATION_KEY: ${KUDOS_VERIFICATION_KEY:-}
+    ports:
+      - "127.0.0.1:${SERVER_PORT:-8084}:8080"
+  frontend:
+    build: ./frontend
+    depends_on:
+      - backend
+    environment:
+      API_TARGET: http://backend:8080
+    ports:
+      - "127.0.0.1:${FRONTEND_PORT:-5177}:5173"
+volumes:
+  postgres-datos:

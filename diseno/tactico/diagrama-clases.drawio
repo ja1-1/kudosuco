@@ -1,0 +1,677 @@
+<?xml version='1.0' encoding='utf-8'?>
+<mxfile host="app.diagrams.net">
+  <diagram id="java-1" name="Dominio">
+    <mxGraphModel dx="1600" dy="1000" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="0" pageScale="1" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="title" value="UCO Kudos · Dominio" vertex="1" parent="1" style="html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;whiteSpace=wrap;fontSize=24;fontStyle=1;fontColor=#253340;">
+          <mxGeometry as="geometry" x="35" y="20.16" width="1480" height="33" />
+        </mxCell>
+        <mxCell id="subtitle" value="Clases del backend Java y sus dependencias" vertex="1" parent="1" style="html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;whiteSpace=wrap;fontSize=13;fontColor=#1F4E79;">
+          <mxGeometry as="geometry" x="35" y="61.74" width="1450" height="26" />
+        </mxCell>
+        <mxCell id="edge-CuentaDominio-ReglaException" source="CuentaDominio" target="ReglaException" parent="1" edge="1" style="html=1;strokeWidth=1.2;endFill=0;strokeColor=#787F85;dashed=1;endArrow=open;edgeStyle=none;rounded=0;jumpStyle=arc;jumpSize=8;exitX=0.88;exitY=1;exitDx=0;exitDy=0;entryX=0.12;entryY=0;entryDx=0;entryDy=0;exitPerimeter=0;entryPerimeter=0;labelBackgroundColor=#FFFFFF;">
+          <mxGeometry as="geometry" relative="1">
+            <Array as="points">
+              <mxPoint x="334.2" y="336" />
+              <mxPoint x="336" y="336" />
+              <mxPoint x="336" y="384" />
+              <mxPoint x="1508.3" y="384" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="CuentaDominio" value="&amp;lt;&amp;lt;record&amp;gt;&amp;gt;&lt;br&gt;&lt;b&gt;CuentaDominio&lt;/b&gt;" vertex="1" parent="1" style="swimlane;html=1;whiteSpace=wrap;startSize=43;horizontal=1;rounded=0;container=1;collapsible=0;fillColor=#E5EDF4;swimlaneFillColor=#FFFFFF;strokeColor=#63788C;fontColor=#253340;fontSize=13;">
+          <mxGeometry as="geometry" x="35" y="124.74" width="340" height="181" />
+        </mxCell>
+        <mxCell id="CuentaDominio-attrs" value="− estado: String&lt;br&gt;− correoVerificado: boolean&lt;br&gt;− celularVerificado: boolean&lt;br&gt;… 1 atributos en ficha" vertex="1" parent="CuentaDominio" style="html=1;whiteSpace=wrap;overflow=hidden;align=left;verticalAlign=top;spacingLeft=7;spacingTop=4;fontSize=11;strokeColor=#A8B6C2;fillColor=#FFFFFF;">
+          <mxGeometry as="geometry" x="0" y="43" width="340" height="64" />
+        </mxCell>
+        <mxCell id="CuentaDominio-methods" value="+ aprobar(): String&lt;br&gt;+ activar(): String&lt;br&gt;+ cambiarEstado(String accion): String" vertex="1" parent="CuentaDominio" style="html=1;whiteSpace=wrap;overflow=hidden;align=left;verticalAlign=top;spacingLeft=7;spacingTop=4;fontSize=11;strokeColor=#A8B6C2;fillColor=#FFFFFF;">
+          <mxGeometry as="geometry" x="0" y="107" width="340" height="74" />
+        </mxCell>
+        <mxCell id="Contacto" value="&amp;lt;&amp;lt;record&amp;gt;&amp;gt;&lt;br&gt;&lt;b&gt;Contacto&lt;/b&gt;" vertex="1" parent="1" style="swimlane;html=1;whiteSpace=wrap;startSize=43;horizontal=1;rounded=0;container=1;collapsible=0;fillColor=#E5EDF4;swimlaneFillColor=#FFFFFF;strokeColor=#63788C;fontColor=#253340;fontSize=13;">
+          <mxGeometry as="geometry" x="512.5" y="124.74" width="340" height="181" />
+        </mxCell>
+        <mxCell id="Contacto-attrs" value="− correo: String&lt;br&gt;− celular: String" vertex="1" parent="Contacto" style="html=1;whiteSpace=wrap;overflow=hidden;align=left;verticalAlign=top;spacingLeft=7;spacingTop=4;fontSize=11;strokeColor=#A8B6C2;fillColor=#FFFFFF;">
+          <mxGeometry as="geometry" x="0" y="43" width="340" height="64" />
+        </mxCell>
+        <mxCell id="Contacto-methods" value="+ validar(Object email, Object tele…): Contacto" vertex="1" parent="Contacto" style="html=1;whiteSpace=wrap;overflow=hidden;align=left;verticalAlign=top;spacingLeft=7;spacingTop=4;fontSize=11;strokeColor=#A8B6C2;fillColor=#FFFFFF;">
+          <mxGeometry as="geometry" x="0" y="107" width="340" height="74" />
+        </mxCell>
+        <mxCell id="CategoriaDominio" value="&amp;lt;&amp;lt;record&amp;gt;&amp;gt;&lt;br&gt;&lt;b&gt;CategoriaDominio&lt;/b&gt;" vertex="1" parent="1" style="swimlane;html=1;whiteSpace=wrap;startSize=43;horizontal=1;rounded=0;container=1;collapsible=0;fillColor=#E5EDF4;swimlaneFillColor=#FFFFFF;strokeColor=#63788C;fontColor=#253340;fontSize=13;">
+          <mxGeometry as="geometry" x="990" y="124.74" width="340" height="181" />
+        </mxCell>
+        <mxCell id="CategoriaDominio-attrs" value="− nombre: String&lt;br&gt;− descripcion: String&lt;br&gt;− activa: boolean" vertex="1" parent="CategoriaDominio" style="html=1;whiteSpace=wrap;overflow=hidden;align=left;verticalAlign=top;spacingLeft=7;spacingTop=4;fontSize=11;strokeColor=#A8B6C2;fillColor=#FFFFFF;">
+          <mxGeometry as="geometry" x="0" y="43" width="340" height="64" />
+        </mxCell>
+        <mxCell id="CategoriaDominio-methods" value="+ instantanea(): List&amp;lt;String&amp;gt;" vertex="1" parent="CategoriaDominio" style="html=1;whiteSpace=wrap;overflow=hidden;align=left;verticalAlign=top;spacingLeft=7;spacingTop=4;fontSize=11;strokeColor=#A8B6C2;fillColor=#FFFFFF;">
+          <mxGeometry as="geometry" x="0" y="107" width="340" height="74" />
+        </mxCell>
+        <mxCell id="Estrellas" value="&amp;lt;&amp;lt;record&amp;gt;&amp;gt;&lt;br&gt;&lt;b&gt;Estrellas&lt;/b&gt;" vertex="1" parent="1" style="swimlane;html=1;whiteSpace=wrap;startSize=43;horizontal=1;rounded=0;container=1;collapsible=0;fillColor=#E5EDF4;swimlaneFillColor=#FFFFFF;strokeColor=#63788C;fontColor=#253340;fontSize=13;">
+          <mxGeometry as="geometry" x="1467.5" y="124.74" width="340" height="181" />
+        </mxCell>
+        <mxCell id="Estrellas-attrs" value="− valor: int" vertex="1" parent="Estrellas" style="html=1;whiteSpace=wrap;overflow=hidden;align=left;verticalAlign=top;spacingLeft=7;spacingTop=4;fontSize=11;strokeColor=#A8B6C2;fillColor=#FFFFFF;">
+          <mxGeometry as="geometry" x="0" y="43" width="340" height="64" />
+        </mxCell>
+        <mxCell id="Estrellas-methods" value="+ validar(Object valor): Estrellas" vertex="1" parent="Estrellas" style="html=1;whiteSpace=wrap;overflow=hidden;align=left;verticalAlign=top;spacingLeft=7;spacingTop=4;fontSize=11;strokeColor=#A8B6C2;fillColor=#FFFFFF;">
+          <mxGeometry as="geometry" x="0" y="107" width="340" height="74" />
+        </mxCell>
+        <mxCell id="ContenidoDominio" value="&amp;lt;&amp;lt;record&amp;gt;&amp;gt;&lt;br&gt;&lt;b&gt;ContenidoDominio&lt;/b&gt;" vertex="1" parent="1" style="swimlane;html=1;whiteSpace=wrap;startSize=43;horizontal=1;rounded=0;container=1;collapsible=0;fillColor=#E5EDF4;swimlaneFillColor=#FFFFFF;strokeColor=#63788C;fontColor=#253340;fontSize=13;">
+          <mxGeometry as="geometry" x="35" y="422.1" width="340" height="181" />
+        </mxCell>
+        <mxCell id="ContenidoDominio-attrs" value="− estado: String" vertex="1" parent="ContenidoDominio" style="html=1;whiteSpace=wrap;overflow=hidden;align=left;verticalAlign=top;spacingLeft=7;spacingTop=4;fontSize=11;strokeColor=#A8B6C2;fillColor=#FFFFFF;">
+          <mxGeometry as="geometry" x="0" y="43" width="340" height="64" />
+        </mxCell>
+        <mxCell id="ContenidoDominio-methods" value="+ publicar(): String&lt;br&gt;+ interactuar(): void&lt;br&gt;+ reportar(): String&lt;br&gt;+ revisar(): String&lt;br&gt;… 2 métodos en ficha" vertex="1" parent="ContenidoDominio" style="html=1;whiteSpace=wrap;overflow=hidden;align=left;verticalAlign=top;spacingLeft=7;spacingTop=4;fontSize=11;strokeColor=#A8B6C2;fillColor=#FFFFFF;">
+          <mxGeometry as="geometry" x="0" y="107" width="340" height="74" />
+        </mxCell>
+        <mxCell id="ReporteDominio" value="&amp;lt;&amp;lt;record&amp;gt;&amp;gt;&lt;br&gt;&lt;b&gt;ReporteDominio&lt;/b&gt;" vertex="1" parent="1" style="swimlane;html=1;whiteSpace=wrap;startSize=43;horizontal=1;rounded=0;container=1;collapsible=0;fillColor=#E5EDF4;swimlaneFillColor=#FFFFFF;strokeColor=#63788C;fontColor=#253340;fontSize=13;">
+          <mxGeometry as="geometry" x="512.5" y="422.1" width="340" height="181" />
+        </mxCell>
+        <mxCell id="ReporteDominio-attrs" value="− estado: String" vertex="1" parent="ReporteDominio" style="html=1;whiteSpace=wrap;overflow=hidden;align=left;verticalAlign=top;spacingLeft=7;spacingTop=4;fontSize=11;strokeColor=#A8B6C2;fillColor=#FFFFFF;">
+          <mxGeometry as="geometry" x="0" y="43" width="340" height="64" />
+        </mxCell>
+        <mxCell id="ReporteDominio-methods" value="+ iniciar(): String&lt;br&gt;+ decidir(boolean aceptar): String" vertex="1" parent="ReporteDominio" style="html=1;whiteSpace=wrap;overflow=hidden;align=left;verticalAlign=top;spacingLeft=7;spacingTop=4;fontSize=11;strokeColor=#A8B6C2;fillColor=#FFFFFF;">
+          <mxGeometry as="geometry" x="0" y="107" width="340" height="74" />
+        </mxCell>
+        <mxCell id="ReglasKudos" value="&amp;lt;&amp;lt;class&amp;gt;&amp;gt;&lt;br&gt;&lt;b&gt;ReglasKudos&lt;/b&gt;" vertex="1" parent="1" style="swimlane;html=1;whiteSpace=wrap;startSize=43;horizontal=1;rounded=0;container=1;collapsible=0;fillColor=#E5EDF4;swimlaneFillColor=#FFFFFF;strokeColor=#63788C;fontColor=#253340;fontSize=13;">
+          <mxGeometry as="geometry" x="990" y="422.1" width="340" height="181" />
+        </mxCell>
+        <mxCell id="ReglasKudos-attrs" value="+ ROLES: Set&amp;lt;String&amp;gt;&lt;br&gt;+ CARGOS: Set&amp;lt;String&amp;gt;&lt;br&gt;+ MIEMBROS: Set&amp;lt;String&amp;gt;&lt;br&gt;… 3 atributos en ficha" vertex="1" parent="ReglasKudos" style="html=1;whiteSpace=wrap;overflow=hidden;align=left;verticalAlign=top;spacingLeft=7;spacingTop=4;fontSize=11;strokeColor=#A8B6C2;fillColor=#FFFFFF;">
+          <mxGeometry as="geometry" x="0" y="43" width="340" height="64" />
+        </mxCell>
+        <mxCell id="ReglasKudos-methods" value="+ texto(Object valor, String nomb…): String&lt;br&gt;+ texto(Object valor, String nomb…): String&lt;br&gt;+ texto(Object valor, String nomb…): String&lt;br&gt;+ identificador(Object valor, String nomb…): long&lt;br&gt;… 4 métodos en ficha" vertex="1" parent="ReglasKudos" style="html=1;whiteSpace=wrap;overflow=hidden;align=left;verticalAlign=top;spacingLeft=7;spacingTop=4;fontSize=11;strokeColor=#A8B6C2;fillColor=#FFFFFF;">
+          <mxGeometry as="geometry" x="0" y="107" width="340" height="74" />
+        </mxCell>
+        <mxCell id="ReglaException" value="&amp;lt;&amp;lt;class&amp;gt;&amp;gt;&lt;br&gt;&lt;b&gt;ReglaException&lt;/b&gt;" vertex="1" parent="1" style="swimlane;html=1;whiteSpace=wrap;startSize=43;horizontal=1;rounded=0;container=1;collapsible=0;fillColor=#E5EDF4;swimlaneFillColor=#FFFFFF;strokeColor=#63788C;fontColor=#253340;fontSize=13;">
+          <mxGeometry as="geometry" x="1467.5" y="422.1" width="340" height="181" />
+        </mxCell>
+        <mxCell id="ReglaException-attrs" value="− estado: int" vertex="1" parent="ReglaException" style="html=1;whiteSpace=wrap;overflow=hidden;align=left;verticalAlign=top;spacingLeft=7;spacingTop=4;fontSize=11;strokeColor=#A8B6C2;fillColor=#FFFFFF;">
+          <mxGeometry as="geometry" x="0" y="43" width="340" height="64" />
+        </mxCell>
+        <mxCell id="ReglaException-methods" value="+ estado(): int&lt;br&gt;+ exigir(boolean valido, String me…): void&lt;br&gt;+ exigir(boolean valido, String me…): void" vertex="1" parent="ReglaException" style="html=1;whiteSpace=wrap;overflow=hidden;align=left;verticalAlign=top;spacingLeft=7;spacingTop=4;fontSize=11;strokeColor=#A8B6C2;fillColor=#FFFFFF;">
+          <mxGeometry as="geometry" x="0" y="107" width="340" height="74" />
+        </mxCell>
+        <mxCell id="fuente" value="Fuente · backend/src/main/java/kudos. Las fichas del Excel incluyen las firmas completas." vertex="1" parent="1" style="html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;whiteSpace=wrap;fontSize=13;fontColor=#293745;">
+          <mxGeometry as="geometry" x="35" y="719.46" width="1450" height="25" />
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+  <diagram id="java-2" name="Controladores y servicios">
+    <mxGraphModel dx="1600" dy="1000" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="0" pageScale="1" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="edge-ref-moderacion-unidad-source-ref-moderacion-unidad-target" source="ref-moderacion-unidad-source" target="ref-moderacion-unidad-target" parent="1" edge="1" style="html=1;strokeWidth=1.2;endFill=0;strokeColor=#787F85;dashed=1;endArrow=open;edgeStyle=none;rounded=0;exitPerimeter=0;entryPerimeter=0;exitX=1;exitY=0.5;entryX=0;entryY=0.5;">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="edge-ModeracionFachada-ModeracionServicio" source="ModeracionFachada" target="ModeracionServicio" parent="1" edge="1" style="html=1;strokeWidth=1.2;endFill=0;strokeColor=#787F85;dashed=1;endArrow=open;edgeStyle=none;rounded=0;exitPerimeter=0;entryPerimeter=0;exitX=0.5;exitY=1;entryX=0.5;entryY=0;">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="edge-ModeracionControlador-ModeracionFachada" source="ModeracionControlador" target="ModeracionFachada" parent="1" edge="1" style="html=1;strokeWidth=1.2;endFill=0;strokeColor=#787F85;dashed=1;endArrow=open;edgeStyle=none;rounded=0;exitPerimeter=0;entryPerimeter=0;exitX=0.5;exitY=1;entryX=0.5;entryY=0;">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="title" value="UCO Kudos · Controladores y servicios" vertex="1" parent="1" style="html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;whiteSpace=wrap;fontSize=24;fontStyle=1;fontColor=#253340;">
+          <mxGeometry as="geometry" x="28" y="16" width="1480" height="33" />
+        </mxCell>
+        <mxCell id="subtitle" value="Clases del backend Java y sus dependencias" vertex="1" parent="1" style="html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;whiteSpace=wrap;fontSize=13;fontColor=#1F4E79;">
+          <mxGeometry as="geometry" x="28" y="49" width="1450" height="26" />
+        </mxCell>
+        <mxCell id="edge-IdentidadControlador-KudosFachada" source="IdentidadControlador" target="KudosFachada" parent="1" edge="1" style="html=1;strokeWidth=1.2;endFill=0;strokeColor=#787F85;dashed=1;endArrow=open;edgeStyle=none;rounded=0;jumpStyle=arc;jumpSize=8;exitX=0.88;exitY=0;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;exitPerimeter=0;entryPerimeter=0;labelBackgroundColor=#FFFFFF;">
+          <mxGeometry as="geometry" relative="1">
+            <Array as="points">
+              <mxPoint x="359.2" y="96" />
+              <mxPoint x="352" y="96" />
+              <mxPoint x="352" y="112" />
+              <mxPoint x="928" y="112" />
+              <mxPoint x="928" y="352" />
+              <mxPoint x="930" y="352" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="edge-IdentidadControlador-IdentidadServicio" source="IdentidadControlador" target="IdentidadServicio" parent="1" edge="1" style="html=1;strokeWidth=1.2;endFill=0;strokeColor=#787F85;dashed=1;endArrow=open;edgeStyle=none;rounded=0;jumpStyle=arc;jumpSize=8;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;exitPerimeter=0;entryPerimeter=0;labelBackgroundColor=#FFFFFF;">
+          <mxGeometry as="geometry" relative="1">
+            <Array as="points">
+              <mxPoint x="230" y="352" />
+              <mxPoint x="224" y="352" />
+              <mxPoint x="224" y="624" />
+              <mxPoint x="230" y="624" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="edge-IdentidadControlador-OrganizacionServicio" source="IdentidadControlador" target="OrganizacionServicio" parent="1" edge="1" style="html=1;strokeWidth=1.2;endFill=0;strokeColor=#787F85;dashed=1;endArrow=open;edgeStyle=none;rounded=0;jumpStyle=arc;jumpSize=8;exitX=1;exitY=0.88;exitDx=0;exitDy=0;entryX=0;entryY=0.12;entryDx=0;entryDy=0;exitPerimeter=0;entryPerimeter=0;labelBackgroundColor=#FFFFFF;">
+          <mxGeometry as="geometry" relative="1">
+            <Array as="points">
+              <mxPoint x="432" y="294.28" />
+              <mxPoint x="432" y="288" />
+              <mxPoint x="496" y="288" />
+              <mxPoint x="496" y="672" />
+              <mxPoint x="496" y="671.72" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="edge-IdentidadControlador-ModeracionFachada" source="ref-edge-IdentidadControlador-ModeracionFachada-source" target="ref-edge-IdentidadControlador-ModeracionFachada-target" parent="1" edge="1" style="html=1;strokeWidth=1.2;endFill=0;strokeColor=#787F85;dashed=1;endArrow=open;jumpStyle=arc;jumpSize=8;labelBackgroundColor=#FFFFFF;edgeStyle=none;rounded=0;exitX=1;exitY=0.5;entryX=0;entryY=0.5;exitDx=0;exitDy=0;entryDx=0;entryDy=0;exitPerimeter=0;entryPerimeter=0;">
+          <mxGeometry as="geometry" relative="1">
+            <Array as="points" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="edge-IdentidadControlador-Solicitud" source="IdentidadControlador" target="Solicitud" parent="1" edge="1" style="html=1;strokeWidth=1.2;endFill=0;strokeColor=#787F85;dashed=1;endArrow=open;edgeStyle=none;rounded=0;jumpStyle=arc;jumpSize=8;exitX=0;exitY=0.88;exitDx=0;exitDy=0;entryX=1;entryY=0.76;entryDx=0;entryDy=0;exitPerimeter=0;entryPerimeter=0;labelBackgroundColor=#FFFFFF;">
+          <mxGeometry as="geometry" relative="1">
+            <Array as="points">
+              <mxPoint x="32" y="294.28" />
+              <mxPoint x="32" y="288" />
+              <mxPoint x="48" y="288" />
+              <mxPoint x="48" y="896" />
+              <mxPoint x="2336" y="896" />
+              <mxPoint x="2336" y="528" />
+              <mxPoint x="2320" y="528" />
+              <mxPoint x="2320" y="527.56" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="edge-OrganizacionControlador-KudosFachada" source="OrganizacionControlador" target="KudosFachada" parent="1" edge="1" style="html=1;strokeWidth=1.2;endFill=0;strokeColor=#787F85;dashed=1;endArrow=open;edgeStyle=none;rounded=0;jumpStyle=arc;jumpSize=8;exitX=0.76;exitY=1;exitDx=0;exitDy=0;entryX=0.12;entryY=0;entryDx=0;entryDy=0;exitPerimeter=0;entryPerimeter=0;labelBackgroundColor=#FFFFFF;">
+          <mxGeometry as="geometry" relative="1">
+            <Array as="points">
+              <mxPoint x="788.4" y="352" />
+              <mxPoint x="784" y="352" />
+              <mxPoint x="800.8" y="352" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="edge-OrganizacionControlador-OrganizacionServicio" source="OrganizacionControlador" target="OrganizacionServicio" parent="1" edge="1" style="html=1;strokeWidth=1.2;endFill=0;strokeColor=#787F85;dashed=1;endArrow=open;edgeStyle=none;rounded=0;jumpStyle=arc;jumpSize=8;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;exitPerimeter=0;entryPerimeter=0;labelBackgroundColor=#FFFFFF;">
+          <mxGeometry as="geometry" relative="1">
+            <Array as="points">
+              <mxPoint x="700" y="352" />
+              <mxPoint x="704" y="352" />
+              <mxPoint x="704" y="624" />
+              <mxPoint x="700" y="624" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="edge-OrganizacionControlador-Solicitud" source="ref-edge-OrganizacionControlador-Solicitud-source" target="ref-edge-OrganizacionControlador-Solicitud-target" parent="1" edge="1" style="html=1;strokeWidth=1.2;endFill=0;strokeColor=#787F85;dashed=1;endArrow=open;jumpStyle=arc;jumpSize=8;labelBackgroundColor=#FFFFFF;edgeStyle=none;rounded=0;exitX=1;exitY=0.5;entryX=0;entryY=0.5;exitDx=0;exitDy=0;entryDx=0;entryDy=0;exitPerimeter=0;entryPerimeter=0;">
+          <mxGeometry as="geometry" relative="1">
+            <Array as="points" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="edge-ReconocimientoControlador-KudosFachada" source="ReconocimientoControlador" target="KudosFachada" parent="1" edge="1" style="html=1;strokeWidth=1.2;endFill=0;strokeColor=#787F85;dashed=1;endArrow=open;edgeStyle=none;rounded=0;jumpStyle=arc;jumpSize=8;exitX=0.12;exitY=1;exitDx=0;exitDy=0;entryX=0.88;entryY=0;entryDx=0;entryDy=0;exitPerimeter=0;entryPerimeter=0;labelBackgroundColor=#FFFFFF;">
+          <mxGeometry as="geometry" relative="1">
+            <Array as="points">
+              <mxPoint x="1040.8" y="352" />
+              <mxPoint x="1040" y="352" />
+              <mxPoint x="1059.2" y="352" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="edge-ReconocimientoControlador-ReconocimientoServicio" source="ReconocimientoControlador" target="ReconocimientoServicio" parent="1" edge="1" style="html=1;strokeWidth=1.2;endFill=0;strokeColor=#787F85;dashed=1;endArrow=open;edgeStyle=none;rounded=0;jumpStyle=arc;jumpSize=8;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;exitPerimeter=0;entryPerimeter=0;labelBackgroundColor=#FFFFFF;">
+          <mxGeometry as="geometry" relative="1">
+            <Array as="points">
+              <mxPoint x="1170" y="352" />
+              <mxPoint x="1168" y="352" />
+              <mxPoint x="1168" y="624" />
+              <mxPoint x="1170" y="624" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="edge-ReconocimientoControlador-Solicitud" source="ReconocimientoControlador" target="Solicitud" parent="1" edge="1" style="html=1;strokeWidth=1.2;endFill=0;strokeColor=#787F85;dashed=1;endArrow=open;edgeStyle=none;rounded=0;jumpStyle=arc;jumpSize=8;exitX=0.36;exitY=1;exitDx=0;exitDy=0;entryX=0;entryY=0.88;entryDx=0;entryDy=0;exitPerimeter=0;entryPerimeter=0;labelBackgroundColor=#FFFFFF;">
+          <mxGeometry as="geometry" relative="1">
+            <Array as="points">
+              <mxPoint x="1122.4" y="352" />
+              <mxPoint x="1120" y="352" />
+              <mxPoint x="1120" y="624" />
+              <mxPoint x="976" y="624" />
+              <mxPoint x="976" y="848" />
+              <mxPoint x="1904" y="848" />
+              <mxPoint x="1904" y="544" />
+              <mxPoint x="1904" y="549.28" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="edge-ModeracionControlador-Solicitud" source="ModeracionControlador" target="Solicitud" parent="1" edge="1" style="html=1;strokeWidth=1.2;endFill=0;strokeColor=#787F85;dashed=1;endArrow=open;edgeStyle=none;rounded=0;jumpStyle=arc;jumpSize=8;exitX=1;exitY=0.88;exitDx=0;exitDy=0;entryX=0;entryY=0.12;entryDx=0;entryDy=0;exitPerimeter=0;entryPerimeter=0;labelBackgroundColor=#FFFFFF;">
+          <mxGeometry as="geometry" relative="1">
+            <Array as="points">
+              <mxPoint x="1840" y="294.28" />
+              <mxPoint x="1840" y="288" />
+              <mxPoint x="1904" y="288" />
+              <mxPoint x="1904" y="416" />
+              <mxPoint x="1904" y="411.72" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="edge-KudosFachada-IdentidadServicio" source="KudosFachada" target="IdentidadServicio" parent="1" edge="1" style="html=1;strokeWidth=1.2;endFill=0;strokeColor=#787F85;dashed=1;endArrow=open;edgeStyle=none;rounded=0;jumpStyle=arc;jumpSize=8;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.88;entryY=1;entryDx=0;entryDy=0;exitPerimeter=0;entryPerimeter=0;labelBackgroundColor=#FFFFFF;">
+          <mxGeometry as="geometry" relative="1">
+            <Array as="points">
+              <mxPoint x="930" y="592" />
+              <mxPoint x="928" y="592" />
+              <mxPoint x="928" y="864" />
+              <mxPoint x="352" y="864" />
+              <mxPoint x="359.2" y="864" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="edge-KudosFachada-Solicitud" source="KudosFachada" target="Solicitud" parent="1" edge="1" style="html=1;strokeWidth=1.2;endFill=0;strokeColor=#787F85;dashed=1;endArrow=open;edgeStyle=none;rounded=0;jumpStyle=arc;jumpSize=8;exitX=0.64;exitY=1;exitDx=0;exitDy=0;entryX=0.12;entryY=1;entryDx=0;entryDy=0;exitPerimeter=0;entryPerimeter=0;labelBackgroundColor=#FFFFFF;">
+          <mxGeometry as="geometry" relative="1">
+            <Array as="points">
+              <mxPoint x="977.6" y="592" />
+              <mxPoint x="976" y="592" />
+              <mxPoint x="976" y="608" />
+              <mxPoint x="960" y="608" />
+              <mxPoint x="960" y="864" />
+              <mxPoint x="1920" y="864" />
+              <mxPoint x="1920" y="608" />
+              <mxPoint x="1984" y="608" />
+              <mxPoint x="1980.8" y="608" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="edge-ModeracionServicio-ReconocimientoServicio" source="ModeracionServicio" target="ReconocimientoServicio" parent="1" edge="1" style="html=1;strokeWidth=1.2;endFill=0;strokeColor=#787F85;dashed=1;endArrow=open;edgeStyle=none;rounded=0;jumpStyle=arc;jumpSize=8;exitX=0;exitY=0.5;exitDx=0;exitDy=0;entryX=1;entryY=0.5;entryDx=0;entryDy=0;exitPerimeter=0;entryPerimeter=0;labelBackgroundColor=#FFFFFF;">
+          <mxGeometry as="geometry" relative="1">
+            <Array as="points">
+              <mxPoint x="1440" y="740.5" />
+              <mxPoint x="1440" y="736" />
+              <mxPoint x="1376" y="736" />
+              <mxPoint x="1376" y="740.5" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="edge-ControladorExcepciones-Solicitud" source="ControladorExcepciones" target="Solicitud" parent="1" edge="1" style="html=1;strokeWidth=1.2;endFill=0;strokeColor=#787F85;dashed=1;endArrow=open;edgeStyle=none;rounded=0;jumpStyle=arc;jumpSize=8;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;exitPerimeter=0;entryPerimeter=0;labelBackgroundColor=#FFFFFF;">
+          <mxGeometry as="geometry" relative="1">
+            <Array as="points">
+              <mxPoint x="2110" y="352" />
+              <mxPoint x="2128" y="352" />
+              <mxPoint x="2110" y="352" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="IdentidadControlador" value="&amp;lt;&amp;lt;class&amp;gt;&amp;gt;&lt;br&gt;&lt;b&gt;IdentidadControlador&lt;/b&gt;" vertex="1" parent="1" style="swimlane;html=1;whiteSpace=wrap;startSize=43;horizontal=1;rounded=0;container=1;collapsible=0;fillColor=#E5EDF4;swimlaneFillColor=#FFFFFF;strokeColor=#63788C;fontColor=#253340;fontSize=13;">
+          <mxGeometry as="geometry" x="60" y="135" width="340" height="181" />
+        </mxCell>
+        <mxCell id="IdentidadControlador-attrs" value="− fachada: KudosFachada&lt;br&gt;− moderacion: ModeracionFachada&lt;br&gt;− identidad: IdentidadServicio&lt;br&gt;… 3 atributos en ficha" vertex="1" parent="IdentidadControlador" style="html=1;whiteSpace=wrap;overflow=hidden;align=left;verticalAlign=top;spacingLeft=7;spacingTop=4;fontSize=11;strokeColor=#A8B6C2;fillColor=#FFFFFF;">
+          <mxGeometry as="geometry" x="0" y="43" width="340" height="64" />
+        </mxCell>
+        <mxCell id="IdentidadControlador-methods" value="~ salud(): Map&amp;lt;String, Boolean&amp;gt;&lt;br&gt;~ opciones(HttpServletRequest http): Object&lt;br&gt;~ registrar(HttpServletRequest http): Object&lt;br&gt;~ ingresar(HttpServletRequest http): Object&lt;br&gt;… 13 métodos en ficha" vertex="1" parent="IdentidadControlador" style="html=1;whiteSpace=wrap;overflow=hidden;align=left;verticalAlign=top;spacingLeft=7;spacingTop=4;fontSize=11;strokeColor=#A8B6C2;fillColor=#FFFFFF;">
+          <mxGeometry as="geometry" x="0" y="107" width="340" height="74" />
+        </mxCell>
+        <mxCell id="OrganizacionControlador" value="&amp;lt;&amp;lt;class&amp;gt;&amp;gt;&lt;br&gt;&lt;b&gt;OrganizacionControlador&lt;/b&gt;" vertex="1" parent="1" style="swimlane;html=1;whiteSpace=wrap;startSize=43;horizontal=1;rounded=0;container=1;collapsible=0;fillColor=#E5EDF4;swimlaneFillColor=#FFFFFF;strokeColor=#63788C;fontColor=#253340;fontSize=13;">
+          <mxGeometry as="geometry" x="530" y="135" width="340" height="181" />
+        </mxCell>
+        <mxCell id="OrganizacionControlador-attrs" value="− fachada: KudosFachada&lt;br&gt;− json: JsonMapper&lt;br&gt;− organizacion: OrganizacionServicio" vertex="1" parent="OrganizacionControlador" style="html=1;whiteSpace=wrap;overflow=hidden;align=left;verticalAlign=top;spacingLeft=7;spacingTop=4;fontSize=11;strokeColor=#A8B6C2;fillColor=#FFFFFF;">
+          <mxGeometry as="geometry" x="0" y="43" width="340" height="64" />
+        </mxCell>
+        <mxCell id="OrganizacionControlador-methods" value="~ organizacion(HttpServletRequest http): Object&lt;br&gt;~ crearFacultad(HttpServletRequest http): Object&lt;br&gt;~ editarFacultad(HttpServletRequest http, …): Ob…&lt;br&gt;~ crearPrograma(HttpServletRequest http): Object&lt;br&gt;… 5 métodos en ficha" vertex="1" parent="OrganizacionControlador" style="html=1;whiteSpace=wrap;overflow=hidden;align=left;verticalAlign=top;spacingLeft=7;spacingTop=4;fontSize=11;strokeColor=#A8B6C2;fillColor=#FFFFFF;">
+          <mxGeometry as="geometry" x="0" y="107" width="340" height="74" />
+        </mxCell>
+        <mxCell id="ReconocimientoControlador" value="&amp;lt;&amp;lt;class&amp;gt;&amp;gt;&lt;br&gt;&lt;b&gt;ReconocimientoControlador&lt;/b&gt;" vertex="1" parent="1" style="swimlane;html=1;whiteSpace=wrap;startSize=43;horizontal=1;rounded=0;container=1;collapsible=0;fillColor=#E5EDF4;swimlaneFillColor=#FFFFFF;strokeColor=#63788C;fontColor=#253340;fontSize=13;">
+          <mxGeometry as="geometry" x="1000" y="135" width="340" height="181" />
+        </mxCell>
+        <mxCell id="ReconocimientoControlador-attrs" value="− fachada: KudosFachada&lt;br&gt;− json: JsonMapper&lt;br&gt;− reconocimiento: ReconocimientoServicio" vertex="1" parent="ReconocimientoControlador" style="html=1;whiteSpace=wrap;overflow=hidden;align=left;verticalAlign=top;spacingLeft=7;spacingTop=4;fontSize=11;strokeColor=#A8B6C2;fillColor=#FFFFFF;">
+          <mxGeometry as="geometry" x="0" y="43" width="340" height="64" />
+        </mxCell>
+        <mxCell id="ReconocimientoControlador-methods" value="~ personas(HttpServletRequest http): Object&lt;br&gt;~ muro(HttpServletRequest http): Object&lt;br&gt;~ publicar(HttpServletRequest http): Object&lt;br&gt;~ detalle(HttpServletRequest http, …): Object&lt;br&gt;… 3 métodos en ficha" vertex="1" parent="ReconocimientoControlador" style="html=1;whiteSpace=wrap;overflow=hidden;align=left;verticalAlign=top;spacingLeft=7;spacingTop=4;fontSize=11;strokeColor=#A8B6C2;fillColor=#FFFFFF;">
+          <mxGeometry as="geometry" x="0" y="107" width="340" height="74" />
+        </mxCell>
+        <mxCell id="ModeracionControlador" value="&amp;lt;&amp;lt;class&amp;gt;&amp;gt;&lt;br&gt;&lt;b&gt;ModeracionControlador&lt;/b&gt;" vertex="1" parent="1" style="swimlane;html=1;whiteSpace=wrap;startSize=43;horizontal=1;rounded=0;container=1;collapsible=0;fillColor=#E5EDF4;swimlaneFillColor=#FFFFFF;strokeColor=#63788C;fontColor=#253340;fontSize=13;">
+          <mxGeometry as="geometry" x="1470" y="135" width="340" height="181" />
+        </mxCell>
+        <mxCell id="ModeracionControlador-attrs" value="− fachada: ModeracionFachada&lt;br&gt;− json: JsonMapper" vertex="1" parent="ModeracionControlador" style="html=1;whiteSpace=wrap;overflow=hidden;align=left;verticalAlign=top;spacingLeft=7;spacingTop=4;fontSize=11;strokeColor=#A8B6C2;fillColor=#FFFFFF;">
+          <mxGeometry as="geometry" x="0" y="43" width="340" height="64" />
+        </mxCell>
+        <mxCell id="ModeracionControlador-methods" value="~ reportar(HttpServletRequest http, …): Object&lt;br&gt;~ vetar(HttpServletRequest http, …): Object&lt;br&gt;~ reportes(HttpServletRequest http): Object&lt;br&gt;~ revisar(HttpServletRequest http, …): Object&lt;br&gt;… 2 métodos en ficha" vertex="1" parent="ModeracionControlador" style="html=1;whiteSpace=wrap;overflow=hidden;align=left;verticalAlign=top;spacingLeft=7;spacingTop=4;fontSize=11;strokeColor=#A8B6C2;fillColor=#FFFFFF;">
+          <mxGeometry as="geometry" x="0" y="107" width="340" height="74" />
+        </mxCell>
+        <mxCell id="KudosFachada" value="&amp;lt;&amp;lt;class&amp;gt;&amp;gt;&lt;br&gt;&lt;b&gt;KudosFachada&lt;/b&gt;" vertex="1" parent="1" style="swimlane;html=1;whiteSpace=wrap;startSize=43;horizontal=1;rounded=0;container=1;collapsible=0;fillColor=#E5EDF4;swimlaneFillColor=#FFFFFF;strokeColor=#63788C;fontColor=#253340;fontSize=13;">
+          <mxGeometry as="geometry" x="760" y="385" width="340" height="181" />
+        </mxCell>
+        <mxCell id="KudosFachada-attrs" value="− dao: KudosPostgresqlDAO&lt;br&gt;− identidad: IdentidadServicio" vertex="1" parent="KudosFachada" style="html=1;whiteSpace=wrap;overflow=hidden;align=left;verticalAlign=top;spacingLeft=7;spacingTop=4;fontSize=11;strokeColor=#A8B6C2;fillColor=#FFFFFF;">
+          <mxGeometry as="geometry" x="0" y="43" width="340" height="64" />
+        </mxCell>
+        <mxCell id="KudosFachada-methods" value="+ ejecutar(Solicitud solicitud, Acce…): T" vertex="1" parent="KudosFachada" style="html=1;whiteSpace=wrap;overflow=hidden;align=left;verticalAlign=top;spacingLeft=7;spacingTop=4;fontSize=11;strokeColor=#A8B6C2;fillColor=#FFFFFF;">
+          <mxGeometry as="geometry" x="0" y="107" width="340" height="74" />
+        </mxCell>
+        <mxCell id="IdentidadServicio" value="&amp;lt;&amp;lt;class&amp;gt;&amp;gt;&lt;br&gt;&lt;b&gt;IdentidadServicio&lt;/b&gt;" vertex="1" parent="1" style="swimlane;html=1;whiteSpace=wrap;startSize=43;horizontal=1;rounded=0;container=1;collapsible=0;fillColor=#E5EDF4;swimlaneFillColor=#FFFFFF;strokeColor=#63788C;fontColor=#253340;fontSize=13;">
+          <mxGeometry as="geometry" x="60" y="650" width="340" height="181" />
+        </mxCell>
+        <mxCell id="IdentidadServicio-attrs" value="− dao: KudosPostgresqlDAO&lt;br&gt;− config: KudosConfiguracion&lt;br&gt;− aleatorio: SecureRandom&lt;br&gt;… 2 atributos en ficha" vertex="1" parent="IdentidadServicio" style="html=1;whiteSpace=wrap;overflow=hidden;align=left;verticalAlign=top;spacingLeft=7;spacingTop=4;fontSize=11;strokeColor=#A8B6C2;fillColor=#FFFFFF;">
+          <mxGeometry as="geometry" x="0" y="43" width="340" height="64" />
+        </mxCell>
+        <mxCell id="IdentidadServicio-methods" value="+ cuenta(long id): Map&amp;lt;String, Object&amp;gt;&lt;br&gt;+ registrar(Map&amp;lt;String, Object&amp;gt; datos…): Map&amp;lt;Str…&lt;br&gt;+ ingresar(Map&amp;lt;String, Object&amp;gt; datos…): Ingreso&lt;br&gt;+ sesion(String token): Map&amp;lt;String, Object&amp;gt;&lt;br&gt;… 12 métodos en ficha" vertex="1" parent="IdentidadServicio" style="html=1;whiteSpace=wrap;overflow=hidden;align=left;verticalAlign=top;spacingLeft=7;spacingTop=4;fontSize=11;strokeColor=#A8B6C2;fillColor=#FFFFFF;">
+          <mxGeometry as="geometry" x="0" y="107" width="340" height="74" />
+        </mxCell>
+        <mxCell id="OrganizacionServicio" value="&amp;lt;&amp;lt;class&amp;gt;&amp;gt;&lt;br&gt;&lt;b&gt;OrganizacionServicio&lt;/b&gt;" vertex="1" parent="1" style="swimlane;html=1;whiteSpace=wrap;startSize=43;horizontal=1;rounded=0;container=1;collapsible=0;fillColor=#E5EDF4;swimlaneFillColor=#FFFFFF;strokeColor=#63788C;fontColor=#253340;fontSize=13;">
+          <mxGeometry as="geometry" x="530" y="650" width="340" height="181" />
+        </mxCell>
+        <mxCell id="OrganizacionServicio-attrs" value="− dao: KudosPostgresqlDAO" vertex="1" parent="OrganizacionServicio" style="html=1;whiteSpace=wrap;overflow=hidden;align=left;verticalAlign=top;spacingLeft=7;spacingTop=4;fontSize=11;strokeColor=#A8B6C2;fillColor=#FFFFFF;">
+          <mxGeometry as="geometry" x="0" y="43" width="340" height="64" />
+        </mxCell>
+        <mxCell id="OrganizacionServicio-methods" value="+ opciones(): Map&amp;lt;String, Object&amp;gt;&lt;br&gt;+ consultar(Map&amp;lt;String, Object&amp;gt; actor): Map&amp;lt;Stri…&lt;br&gt;+ guardarFacultad(Map&amp;lt;String, Object&amp;gt; actor…): M…&lt;br&gt;+ guardarPrograma(Map&amp;lt;String, Object&amp;gt; actor…): M…&lt;br&gt;… 3 métodos en ficha" vertex="1" parent="OrganizacionServicio" style="html=1;whiteSpace=wrap;overflow=hidden;align=left;verticalAlign=top;spacingLeft=7;spacingTop=4;fontSize=11;strokeColor=#A8B6C2;fillColor=#FFFFFF;">
+          <mxGeometry as="geometry" x="0" y="107" width="340" height="74" />
+        </mxCell>
+        <mxCell id="ReconocimientoServicio" value="&amp;lt;&amp;lt;class&amp;gt;&amp;gt;&lt;br&gt;&lt;b&gt;ReconocimientoServicio&lt;/b&gt;" vertex="1" parent="1" style="swimlane;html=1;whiteSpace=wrap;startSize=43;horizontal=1;rounded=0;container=1;collapsible=0;fillColor=#E5EDF4;swimlaneFillColor=#FFFFFF;strokeColor=#63788C;fontColor=#253340;fontSize=13;">
+          <mxGeometry as="geometry" x="1000" y="650" width="340" height="181" />
+        </mxCell>
+        <mxCell id="ReconocimientoServicio-attrs" value="− VISTA: String&lt;br&gt;− dao: KudosPostgresqlDAO" vertex="1" parent="ReconocimientoServicio" style="html=1;whiteSpace=wrap;overflow=hidden;align=left;verticalAlign=top;spacingLeft=7;spacingTop=4;fontSize=11;strokeColor=#A8B6C2;fillColor=#FFFFFF;">
+          <mxGeometry as="geometry" x="0" y="43" width="340" height="64" />
+        </mxCell>
+        <mxCell id="ReconocimientoServicio-methods" value="~ contenido(Object id, boolean ordina…): Map&amp;lt;Str…&lt;br&gt;+ personas(Map&amp;lt;String, Object&amp;gt; consu…): Map&amp;lt;Stri…&lt;br&gt;+ muro(Map&amp;lt;String, Object&amp;gt; actor…): Map&amp;lt;String, …&lt;br&gt;+ detalle(Map&amp;lt;String, Object&amp;gt; actor…): Map&amp;lt;Strin…&lt;br&gt;… 6 métodos en ficha" vertex="1" parent="ReconocimientoServicio" style="html=1;whiteSpace=wrap;overflow=hidden;align=left;verticalAlign=top;spacingLeft=7;spacingTop=4;fontSize=11;strokeColor=#A8B6C2;fillColor=#FFFFFF;">
+          <mxGeometry as="geometry" x="0" y="107" width="340" height="74" />
+        </mxCell>
+        <mxCell id="ModeracionServicio" value="&amp;lt;&amp;lt;class&amp;gt;&amp;gt;&lt;br&gt;&lt;b&gt;ModeracionServicio&lt;/b&gt;" vertex="1" parent="1" style="swimlane;html=1;whiteSpace=wrap;startSize=43;horizontal=1;rounded=0;container=1;collapsible=0;fillColor=#E5EDF4;swimlaneFillColor=#FFFFFF;strokeColor=#63788C;fontColor=#253340;fontSize=13;">
+          <mxGeometry as="geometry" x="1470" y="650" width="340" height="181" />
+        </mxCell>
+        <mxCell id="ModeracionServicio-attrs" value="− MOTIVOS: Set&amp;lt;String&amp;gt;&lt;br&gt;− repositorio: ModeracionRepositorio&lt;br&gt;− reconocimientos: ReconocimientoServicio" vertex="1" parent="ModeracionServicio" style="html=1;whiteSpace=wrap;overflow=hidden;align=left;verticalAlign=top;spacingLeft=7;spacingTop=4;fontSize=11;strokeColor=#A8B6C2;fillColor=#FFFFFF;">
+          <mxGeometry as="geometry" x="0" y="43" width="340" height="64" />
+        </mxCell>
+        <mxCell id="ModeracionServicio-methods" value="+ reportar(…): Map&lt;br&gt;+ revisar(…): Map&lt;br&gt;+ vetar(…): Map&lt;br&gt;+ auditoria(…): Map&lt;br&gt;… 3 métodos en ficha" vertex="1" parent="ModeracionServicio" style="html=1;whiteSpace=wrap;overflow=hidden;align=left;verticalAlign=top;spacingLeft=7;spacingTop=4;fontSize=11;strokeColor=#A8B6C2;fillColor=#FFFFFF;">
+          <mxGeometry as="geometry" x="0" y="107" width="340" height="74" />
+        </mxCell>
+        <mxCell id="Solicitud" value="&amp;lt;&amp;lt;record&amp;gt;&amp;gt;&lt;br&gt;&lt;b&gt;Solicitud&lt;/b&gt;" vertex="1" parent="1" style="swimlane;html=1;whiteSpace=wrap;startSize=43;horizontal=1;rounded=0;container=1;collapsible=0;fillColor=#E5EDF4;swimlaneFillColor=#FFFFFF;strokeColor=#63788C;fontColor=#253340;fontSize=13;">
+          <mxGeometry as="geometry" x="1940" y="390" width="340" height="181" />
+        </mxCell>
+        <mxCell id="Solicitud-attrs" value="− token: String&lt;br&gt;− remoto: String&lt;br&gt;− datos: Map&amp;lt;String, Object&amp;gt;&lt;br&gt;… 6 atributos en ficha" vertex="1" parent="Solicitud" style="html=1;whiteSpace=wrap;overflow=hidden;align=left;verticalAlign=top;spacingLeft=7;spacingTop=4;fontSize=11;strokeColor=#A8B6C2;fillColor=#FFFFFF;">
+          <mxGeometry as="geometry" x="0" y="43" width="340" height="64" />
+        </mxCell>
+        <mxCell id="Solicitud-methods" value="+ leer(HttpServletRequest http, …): Solicitud&lt;br&gt;+ metadatos(HttpServletRequest http): Solicitud&lt;br&gt;+ leerPublicacion(HttpServletRequest http): Soli…" vertex="1" parent="Solicitud" style="html=1;whiteSpace=wrap;overflow=hidden;align=left;verticalAlign=top;spacingLeft=7;spacingTop=4;fontSize=11;strokeColor=#A8B6C2;fillColor=#FFFFFF;">
+          <mxGeometry as="geometry" x="0" y="107" width="340" height="74" />
+        </mxCell>
+        <mxCell id="ControladorExcepciones" value="&amp;lt;&amp;lt;class&amp;gt;&amp;gt;&lt;br&gt;&lt;b&gt;ControladorExcepciones&lt;/b&gt;" vertex="1" parent="1" style="swimlane;html=1;whiteSpace=wrap;startSize=43;horizontal=1;rounded=0;container=1;collapsible=0;fillColor=#E5EDF4;swimlaneFillColor=#FFFFFF;strokeColor=#63788C;fontColor=#253340;fontSize=13;">
+          <mxGeometry as="geometry" x="1940" y="135" width="340" height="181" />
+        </mxCell>
+        <mxCell id="ControladorExcepciones-attrs" value="" vertex="1" parent="ControladorExcepciones" style="html=1;whiteSpace=wrap;overflow=hidden;align=left;verticalAlign=top;spacingLeft=7;spacingTop=4;fontSize=11;strokeColor=#A8B6C2;fillColor=#FFFFFF;">
+          <mxGeometry as="geometry" x="0" y="43" width="340" height="64" />
+        </mxCell>
+        <mxCell id="ControladorExcepciones-methods" value="~ regla(ReglaException error): ResponseEntity&amp;lt;Ma…&lt;br&gt;~ datos(DataAccessException error): ResponseEnti…&lt;br&gt;~ inesperada(Exception error): ResponseEntity&amp;lt;Ma…" vertex="1" parent="ControladorExcepciones" style="html=1;whiteSpace=wrap;overflow=hidden;align=left;verticalAlign=top;spacingLeft=7;spacingTop=4;fontSize=11;strokeColor=#A8B6C2;fillColor=#FFFFFF;">
+          <mxGeometry as="geometry" x="0" y="107" width="340" height="74" />
+        </mxCell>
+        <mxCell id="Datos" value="&amp;lt;&amp;lt;class&amp;gt;&amp;gt;&lt;br&gt;&lt;b&gt;Datos&lt;/b&gt;" vertex="1" parent="1" style="swimlane;html=1;whiteSpace=wrap;startSize=43;horizontal=1;rounded=0;container=1;collapsible=0;fillColor=#E5EDF4;swimlaneFillColor=#FFFFFF;strokeColor=#63788C;fontColor=#253340;fontSize=13;">
+          <mxGeometry as="geometry" x="1940" y="650" width="340" height="181" />
+        </mxCell>
+        <mxCell id="Datos-attrs" value="" vertex="1" parent="Datos" style="html=1;whiteSpace=wrap;overflow=hidden;align=left;verticalAlign=top;spacingLeft=7;spacingTop=4;fontSize=11;strokeColor=#A8B6C2;fillColor=#FFFFFF;">
+          <mxGeometry as="geometry" x="0" y="43" width="340" height="64" />
+        </mxCell>
+        <mxCell id="Datos-methods" value="+ datos(Object[] pares): Map&amp;lt;String, Object&amp;gt;&lt;br&gt;+ pagina(List&amp;lt;Map&amp;lt;String, Object&amp;gt;&amp;gt;…): Map&amp;lt;String…" vertex="1" parent="Datos" style="html=1;whiteSpace=wrap;overflow=hidden;align=left;verticalAlign=top;spacingLeft=7;spacingTop=4;fontSize=11;strokeColor=#A8B6C2;fillColor=#FFFFFF;">
+          <mxGeometry as="geometry" x="0" y="107" width="340" height="74" />
+        </mxCell>
+        <mxCell id="fuente" value="Fuente · backend/src/main/java/kudos. Las fichas del Excel incluyen las firmas completas." vertex="1" parent="1" style="html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;whiteSpace=wrap;fontSize=13;fontColor=#293745;">
+          <mxGeometry as="geometry" x="28" y="930" width="1450" height="25" />
+        </mxCell>
+        <mxCell id="references-title" value="Dependencias adicionales de las clases de esta vista" vertex="1" parent="1" style="text;html=1;align=left;verticalAlign=middle;whiteSpace=wrap;fontFamily=Arial;fontSize=15;fontColor=#25384D;fontStyle=1;fontSize=19;">
+          <mxGeometry x="35" y="1020" width="1200" height="32" as="geometry" />
+        </mxCell>
+        <mxCell id="ref-edge-IdentidadControlador-ModeracionFachada-source" value="&lt;b&gt;IdentidadControlador&lt;/b&gt;" vertex="1" parent="1" style="rounded=0;html=1;whiteSpace=wrap;align=center;verticalAlign=middle;fontFamily=Arial;fontSize=15;fillColor=#EDF4FA;strokeColor=#6C8EBF;fontColor=#172638;">
+          <mxGeometry x="35" y="1078" width="286" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="ref-edge-IdentidadControlador-ModeracionFachada-target" value="&lt;b&gt;ModeracionFachada&lt;/b&gt;" vertex="1" parent="1" style="rounded=0;html=1;whiteSpace=wrap;align=center;verticalAlign=middle;fontFamily=Arial;fontSize=15;fillColor=#EDF4FA;strokeColor=#6C8EBF;fontColor=#172638;">
+          <mxGeometry x="550" y="1078" width="286" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="ref-edge-OrganizacionControlador-Solicitud-source" value="&lt;b&gt;OrganizacionControlador&lt;/b&gt;" vertex="1" parent="1" style="rounded=0;html=1;whiteSpace=wrap;align=center;verticalAlign=middle;fontFamily=Arial;fontSize=15;fillColor=#EDF4FA;strokeColor=#6C8EBF;fontColor=#172638;">
+          <mxGeometry x="1065" y="1078" width="286" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="ref-edge-OrganizacionControlador-Solicitud-target" value="&lt;b&gt;Solicitud&lt;/b&gt;" vertex="1" parent="1" style="rounded=0;html=1;whiteSpace=wrap;align=center;verticalAlign=middle;fontFamily=Arial;fontSize=15;fillColor=#EDF4FA;strokeColor=#6C8EBF;fontColor=#172638;">
+          <mxGeometry x="1580" y="1078" width="286" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="ModeracionFachada" value="&amp;lt;&amp;lt;class&amp;gt;&amp;gt;&lt;br&gt;&lt;b&gt;ModeracionFachada&lt;/b&gt;" vertex="1" parent="1" style="swimlane;html=1;whiteSpace=wrap;startSize=43;horizontal=1;rounded=0;container=1;collapsible=0;fillColor=#E5EDF4;swimlaneFillColor=#FFFFFF;strokeColor=#63788C;fontColor=#253340;fontSize=13;">
+          <mxGeometry as="geometry" x="1470" y="390" width="340" height="181" />
+        </mxCell>
+        <mxCell id="ModeracionFachada-attrs" value="− unidadDeTrabajo: KudosFachada&lt;br&gt;− moderacion: ModeracionServicio" vertex="1" parent="ModeracionFachada" style="html=1;whiteSpace=wrap;overflow=hidden;align=left;verticalAlign=top;spacingLeft=7;spacingTop=4;fontSize=11;strokeColor=#A8B6C2;fillColor=#FFFFFF;">
+          <mxGeometry as="geometry" x="0" y="43" width="340" height="64" />
+        </mxCell>
+        <mxCell id="ModeracionFachada-methods" value="+ reportar(…): Map&lt;br&gt;+ revisar(…): Map&lt;br&gt;+ vetar(…): Map&lt;br&gt;+ consultarActividadPersonal(…): Map&lt;br&gt;… 3 métodos en ficha" vertex="1" parent="ModeracionFachada" style="html=1;whiteSpace=wrap;overflow=hidden;align=left;verticalAlign=top;spacingLeft=7;spacingTop=4;fontSize=11;strokeColor=#A8B6C2;fillColor=#FFFFFF;">
+          <mxGeometry as="geometry" x="0" y="107" width="340" height="74" />
+        </mxCell>
+        <mxCell id="ref-moderacion-unidad-source" value="&lt;b&gt;ModeracionFachada&lt;/b&gt;" vertex="1" parent="1" style="rounded=0;html=1;whiteSpace=wrap;align=center;verticalAlign=middle;fontFamily=Arial;fontSize=15;fillColor=#EDF4FA;strokeColor=#6C8EBF;fontColor=#172638;">
+          <mxGeometry x="35" y="1180" width="286" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="ref-moderacion-unidad-target" value="&lt;b&gt;KudosFachada&lt;/b&gt;" vertex="1" parent="1" style="rounded=0;html=1;whiteSpace=wrap;align=center;verticalAlign=middle;fontFamily=Arial;fontSize=15;fillColor=#EDF4FA;strokeColor=#6C8EBF;fontColor=#172638;">
+          <mxGeometry x="550" y="1180" width="286" height="60" as="geometry" />
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+  <diagram id="java-3" name="Infraestructura y configuración">
+    <mxGraphModel dx="1600" dy="1000" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="0" pageScale="1" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="title" value="UCO Kudos · Infraestructura y configuración" vertex="1" parent="1" style="html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;whiteSpace=wrap;fontSize=24;fontStyle=1;fontColor=#253340;">
+          <mxGeometry as="geometry" x="35" y="20.16" width="1480" height="33" />
+        </mxCell>
+        <mxCell id="subtitle" value="Clases del backend Java y sus dependencias" vertex="1" parent="1" style="html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;whiteSpace=wrap;fontSize=13;fontColor=#1F4E79;">
+          <mxGeometry as="geometry" x="35" y="61.74" width="1450" height="26" />
+        </mxCell>
+        <mxCell id="edge-KudosApplication-KudosConfiguracion" source="KudosApplication" target="KudosConfiguracion" parent="1" edge="1" style="html=1;strokeWidth=1.2;endFill=0;strokeColor=#787F85;dashed=1;endArrow=open;edgeStyle=none;rounded=0;jumpStyle=arc;jumpSize=8;exitX=1;exitY=0.12;exitDx=0;exitDy=0;entryX=0;entryY=0.12;entryDx=0;entryDy=0;exitPerimeter=0;entryPerimeter=0;labelBackgroundColor=#FFFFFF;">
+          <mxGeometry as="geometry" relative="1">
+            <Array as="points">
+              <mxPoint x="416" y="146.46" />
+              <mxPoint x="416" y="144" />
+              <mxPoint x="496" y="144" />
+              <mxPoint x="496" y="112" />
+              <mxPoint x="1440" y="112" />
+              <mxPoint x="1440" y="146.46" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="edge-SeguridadConfiguracion-KudosConfiguracion" source="SeguridadConfiguracion" target="KudosConfiguracion" parent="1" edge="1" style="html=1;strokeWidth=1.2;endFill=0;strokeColor=#787F85;dashed=1;endArrow=open;edgeStyle=none;rounded=0;jumpStyle=arc;jumpSize=8;exitX=0.88;exitY=1;exitDx=0;exitDy=0;entryX=1;entryY=0.88;entryDx=0;entryDy=0;exitPerimeter=0;entryPerimeter=0;labelBackgroundColor=#FFFFFF;">
+          <mxGeometry as="geometry" relative="1">
+            <Array as="points">
+              <mxPoint x="334.2" y="640" />
+              <mxPoint x="336" y="640" />
+              <mxPoint x="336" y="672" />
+              <mxPoint x="1840" y="672" />
+              <mxPoint x="1840" y="284.02" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="edge-ComandosConfiguracion-KudosPostgresqlDAO" source="ComandosConfiguracion" target="KudosPostgresqlDAO" parent="1" edge="1" style="html=1;strokeWidth=1.2;endFill=0;strokeColor=#787F85;dashed=1;endArrow=open;edgeStyle=none;rounded=0;jumpStyle=arc;jumpSize=8;exitX=0.5;exitY=0;exitDx=0;exitDy=0;entryX=0.5;entryY=1;entryDx=0;entryDy=0;exitPerimeter=0;entryPerimeter=0;labelBackgroundColor=#FFFFFF;">
+          <mxGeometry as="geometry" relative="1">
+            <Array as="points">
+              <mxPoint x="682.5" y="384" />
+              <mxPoint x="688" y="384" />
+              <mxPoint x="688" y="336" />
+              <mxPoint x="682.5" y="336" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="edge-ComandosConfiguracion-KudosConfiguracion" source="ComandosConfiguracion" target="KudosConfiguracion" parent="1" edge="1" style="html=1;strokeWidth=1.2;endFill=0;strokeColor=#787F85;dashed=1;endArrow=open;edgeStyle=none;rounded=0;jumpStyle=arc;jumpSize=8;exitX=1;exitY=0.88;exitDx=0;exitDy=0;entryX=0.12;entryY=1;entryDx=0;entryDy=0;exitPerimeter=0;entryPerimeter=0;labelBackgroundColor=#FFFFFF;">
+          <mxGeometry as="geometry" relative="1">
+            <Array as="points">
+              <mxPoint x="880" y="581.38" />
+              <mxPoint x="880" y="576" />
+              <mxPoint x="976" y="576" />
+              <mxPoint x="976" y="624" />
+              <mxPoint x="1456" y="624" />
+              <mxPoint x="1456" y="336" />
+              <mxPoint x="1508.3" y="336" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="edge-ComandosConfiguracion-DemostracionServicio" source="ComandosConfiguracion" target="DemostracionServicio" parent="1" edge="1" style="html=1;strokeWidth=1.2;endFill=0;strokeColor=#787F85;dashed=1;endArrow=open;edgeStyle=none;rounded=0;jumpStyle=arc;jumpSize=8;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;exitPerimeter=0;entryPerimeter=0;labelBackgroundColor=#FFFFFF;">
+          <mxGeometry as="geometry" relative="1">
+            <Array as="points">
+              <mxPoint x="880" y="512.6" />
+              <mxPoint x="880" y="512" />
+              <mxPoint x="960" y="512" />
+              <mxPoint x="960" y="512.6" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="edge-ComandosConfiguracion-Notificaciones" source="ComandosConfiguracion" target="Notificaciones" parent="1" edge="1" style="html=1;strokeWidth=1.2;endFill=0;strokeColor=#787F85;dashed=1;endArrow=open;edgeStyle=none;rounded=0;jumpStyle=arc;jumpSize=8;exitX=0.88;exitY=1;exitDx=0;exitDy=0;entryX=0.12;entryY=1;entryDx=0;entryDy=0;exitPerimeter=0;entryPerimeter=0;labelBackgroundColor=#FFFFFF;">
+          <mxGeometry as="geometry" relative="1">
+            <Array as="points">
+              <mxPoint x="811.7" y="640" />
+              <mxPoint x="1508.3" y="640" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="edge-DemostracionServicio-KudosPostgresqlDAO" source="DemostracionServicio" target="KudosPostgresqlDAO" parent="1" edge="1" style="html=1;strokeWidth=1.2;endFill=0;strokeColor=#787F85;dashed=1;endArrow=open;edgeStyle=none;rounded=0;jumpStyle=arc;jumpSize=8;exitX=0;exitY=0.12;exitDx=0;exitDy=0;entryX=1;entryY=0.88;entryDx=0;entryDy=0;exitPerimeter=0;entryPerimeter=0;labelBackgroundColor=#FFFFFF;">
+          <mxGeometry as="geometry" relative="1">
+            <Array as="points">
+              <mxPoint x="960" y="443.82" />
+              <mxPoint x="960" y="448" />
+              <mxPoint x="880" y="448" />
+              <mxPoint x="880" y="284.02" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="edge-DemostracionServicio-KudosConfiguracion" source="DemostracionServicio" target="KudosConfiguracion" parent="1" edge="1" style="html=1;strokeWidth=1.2;endFill=0;strokeColor=#787F85;dashed=1;endArrow=open;edgeStyle=none;rounded=0;jumpStyle=arc;jumpSize=8;exitX=1;exitY=0.12;exitDx=0;exitDy=0;entryX=0;entryY=0.88;entryDx=0;entryDy=0;exitPerimeter=0;entryPerimeter=0;labelBackgroundColor=#FFFFFF;">
+          <mxGeometry as="geometry" relative="1">
+            <Array as="points">
+              <mxPoint x="1360" y="443.82" />
+              <mxPoint x="1360" y="448" />
+              <mxPoint x="1440" y="448" />
+              <mxPoint x="1440" y="284.02" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="edge-Notificaciones-KudosPostgresqlDAO" source="Notificaciones" target="KudosPostgresqlDAO" parent="1" edge="1" style="html=1;strokeWidth=1.2;endFill=0;strokeColor=#787F85;dashed=1;endArrow=open;edgeStyle=none;rounded=0;jumpStyle=arc;jumpSize=8;exitX=0.24;exitY=1;exitDx=0;exitDy=0;entryX=0;entryY=0.88;entryDx=0;entryDy=0;exitPerimeter=0;entryPerimeter=0;labelBackgroundColor=#FFFFFF;">
+          <mxGeometry as="geometry" relative="1">
+            <Array as="points">
+              <mxPoint x="1549.1" y="640" />
+              <mxPoint x="1552" y="640" />
+              <mxPoint x="1552" y="656" />
+              <mxPoint x="480" y="656" />
+              <mxPoint x="480" y="284.02" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="KudosApplication" value="&amp;lt;&amp;lt;class&amp;gt;&amp;gt;&lt;br&gt;&lt;b&gt;KudosApplication&lt;/b&gt;" vertex="1" parent="1" style="swimlane;html=1;whiteSpace=wrap;startSize=43;horizontal=1;rounded=0;container=1;collapsible=0;fillColor=#E5EDF4;swimlaneFillColor=#FFFFFF;strokeColor=#63788C;fontColor=#253340;fontSize=13;">
+          <mxGeometry as="geometry" x="35" y="124.74" width="340" height="181" />
+        </mxCell>
+        <mxCell id="KudosApplication-attrs" value="" vertex="1" parent="KudosApplication" style="html=1;whiteSpace=wrap;overflow=hidden;align=left;verticalAlign=top;spacingLeft=7;spacingTop=4;fontSize=11;strokeColor=#A8B6C2;fillColor=#FFFFFF;">
+          <mxGeometry as="geometry" x="0" y="43" width="340" height="64" />
+        </mxCell>
+        <mxCell id="KudosApplication-methods" value="~ main(String[] args): void" vertex="1" parent="KudosApplication" style="html=1;whiteSpace=wrap;overflow=hidden;align=left;verticalAlign=top;spacingLeft=7;spacingTop=4;fontSize=11;strokeColor=#A8B6C2;fillColor=#FFFFFF;">
+          <mxGeometry as="geometry" x="0" y="107" width="340" height="74" />
+        </mxCell>
+        <mxCell id="KudosPostgresqlDAO" value="&amp;lt;&amp;lt;class&amp;gt;&amp;gt;&lt;br&gt;&lt;b&gt;KudosPostgresqlDAO&lt;/b&gt;" vertex="1" parent="1" style="swimlane;html=1;whiteSpace=wrap;startSize=43;horizontal=1;rounded=0;container=1;collapsible=0;fillColor=#E5EDF4;swimlaneFillColor=#FFFFFF;strokeColor=#63788C;fontColor=#253340;fontSize=13;">
+          <mxGeometry as="geometry" x="512.5" y="124.74" width="340" height="181" />
+        </mxCell>
+        <mxCell id="KudosPostgresqlDAO-attrs" value="− jdbc: JdbcTemplate&lt;br&gt;− json: JsonMapper&lt;br&gt;− lectura: TransactionTemplate&lt;br&gt;… 1 atributos en ficha" vertex="1" parent="KudosPostgresqlDAO" style="html=1;whiteSpace=wrap;overflow=hidden;align=left;verticalAlign=top;spacingLeft=7;spacingTop=4;fontSize=11;strokeColor=#A8B6C2;fillColor=#FFFFFF;">
+          <mxGeometry as="geometry" x="0" y="43" width="340" height="64" />
+        </mxCell>
+        <mxCell id="KudosPostgresqlDAO-methods" value="+ transaccion(boolean modifica, Supplie…): T&lt;br&gt;+ todos(String sql, Object[] para…): List&amp;lt;Map&amp;lt;St…&lt;br&gt;+ uno(String sql, Object[] para…): Map&amp;lt;String, O…&lt;br&gt;+ ejecutar(String sql, Object[] para…): int&lt;br&gt;… 7 métodos en ficha" vertex="1" parent="KudosPostgresqlDAO" style="html=1;whiteSpace=wrap;overflow=hidden;align=left;verticalAlign=top;spacingLeft=7;spacingTop=4;fontSize=11;strokeColor=#A8B6C2;fillColor=#FFFFFF;">
+          <mxGeometry as="geometry" x="0" y="107" width="340" height="74" />
+        </mxCell>
+        <mxCell id="PersistenciaConfiguracion" value="&amp;lt;&amp;lt;class&amp;gt;&amp;gt;&lt;br&gt;&lt;b&gt;PersistenciaConfiguracion&lt;/b&gt;" vertex="1" parent="1" style="swimlane;html=1;whiteSpace=wrap;startSize=43;horizontal=1;rounded=0;container=1;collapsible=0;fillColor=#E5EDF4;swimlaneFillColor=#FFFFFF;strokeColor=#63788C;fontColor=#253340;fontSize=13;">
+          <mxGeometry as="geometry" x="990" y="124.74" width="340" height="181" />
+        </mxCell>
+        <mxCell id="PersistenciaConfiguracion-attrs" value="" vertex="1" parent="PersistenciaConfiguracion" style="html=1;whiteSpace=wrap;overflow=hidden;align=left;verticalAlign=top;spacingLeft=7;spacingTop=4;fontSize=11;strokeColor=#A8B6C2;fillColor=#FFFFFF;">
+          <mxGeometry as="geometry" x="0" y="43" width="340" height="64" />
+        </mxCell>
+        <mxCell id="PersistenciaConfiguracion-methods" value="~ transacciones(DataSource datos): JdbcTransacti…" vertex="1" parent="PersistenciaConfiguracion" style="html=1;whiteSpace=wrap;overflow=hidden;align=left;verticalAlign=top;spacingLeft=7;spacingTop=4;fontSize=11;strokeColor=#A8B6C2;fillColor=#FFFFFF;">
+          <mxGeometry as="geometry" x="0" y="107" width="340" height="74" />
+        </mxCell>
+        <mxCell id="KudosConfiguracion" value="&amp;lt;&amp;lt;record&amp;gt;&amp;gt;&lt;br&gt;&lt;b&gt;KudosConfiguracion&lt;/b&gt;" vertex="1" parent="1" style="swimlane;html=1;whiteSpace=wrap;startSize=43;horizontal=1;rounded=0;container=1;collapsible=0;fillColor=#E5EDF4;swimlaneFillColor=#FFFFFF;strokeColor=#63788C;fontColor=#253340;fontSize=13;">
+          <mxGeometry as="geometry" x="1467.5" y="124.74" width="340" height="181" />
+        </mxCell>
+        <mxCell id="KudosConfiguracion-attrs" value="− demo: String&lt;br&gt;− origin: String&lt;br&gt;− institution: String&lt;br&gt;… 1 atributos en ficha" vertex="1" parent="KudosConfiguracion" style="html=1;whiteSpace=wrap;overflow=hidden;align=left;verticalAlign=top;spacingLeft=7;spacingTop=4;fontSize=11;strokeColor=#A8B6C2;fillColor=#FFFFFF;">
+          <mxGeometry as="geometry" x="0" y="43" width="340" height="64" />
+        </mxCell>
+        <mxCell id="KudosConfiguracion-methods" value="+ demostracion(): boolean&lt;br&gt;+ clave(): byte[]" vertex="1" parent="KudosConfiguracion" style="html=1;whiteSpace=wrap;overflow=hidden;align=left;verticalAlign=top;spacingLeft=7;spacingTop=4;fontSize=11;strokeColor=#A8B6C2;fillColor=#FFFFFF;">
+          <mxGeometry as="geometry" x="0" y="107" width="340" height="74" />
+        </mxCell>
+        <mxCell id="SeguridadConfiguracion" value="&amp;lt;&amp;lt;class&amp;gt;&amp;gt;&lt;br&gt;&lt;b&gt;SeguridadConfiguracion&lt;/b&gt;" vertex="1" parent="1" style="swimlane;html=1;whiteSpace=wrap;startSize=43;horizontal=1;rounded=0;container=1;collapsible=0;fillColor=#E5EDF4;swimlaneFillColor=#FFFFFF;strokeColor=#63788C;fontColor=#253340;fontSize=13;">
+          <mxGeometry as="geometry" x="35" y="422.1" width="340" height="181" />
+        </mxCell>
+        <mxCell id="SeguridadConfiguracion-attrs" value="" vertex="1" parent="SeguridadConfiguracion" style="html=1;whiteSpace=wrap;overflow=hidden;align=left;verticalAlign=top;spacingLeft=7;spacingTop=4;fontSize=11;strokeColor=#A8B6C2;fillColor=#FFFFFF;">
+          <mxGeometry as="geometry" x="0" y="43" width="340" height="64" />
+        </mxCell>
+        <mxCell id="SeguridadConfiguracion-methods" value="~ seguridad(HttpSecurity http, KudosC…): Securit…" vertex="1" parent="SeguridadConfiguracion" style="html=1;whiteSpace=wrap;overflow=hidden;align=left;verticalAlign=top;spacingLeft=7;spacingTop=4;fontSize=11;strokeColor=#A8B6C2;fillColor=#FFFFFF;">
+          <mxGeometry as="geometry" x="0" y="107" width="340" height="74" />
+        </mxCell>
+        <mxCell id="ComandosConfiguracion" value="&amp;lt;&amp;lt;class&amp;gt;&amp;gt;&lt;br&gt;&lt;b&gt;ComandosConfiguracion&lt;/b&gt;" vertex="1" parent="1" style="swimlane;html=1;whiteSpace=wrap;startSize=43;horizontal=1;rounded=0;container=1;collapsible=0;fillColor=#E5EDF4;swimlaneFillColor=#FFFFFF;strokeColor=#63788C;fontColor=#253340;fontSize=13;">
+          <mxGeometry as="geometry" x="512.5" y="422.1" width="340" height="181" />
+        </mxCell>
+        <mxCell id="ComandosConfiguracion-attrs" value="" vertex="1" parent="ComandosConfiguracion" style="html=1;whiteSpace=wrap;overflow=hidden;align=left;verticalAlign=top;spacingLeft=7;spacingTop=4;fontSize=11;strokeColor=#A8B6C2;fillColor=#FFFFFF;">
+          <mxGeometry as="geometry" x="0" y="43" width="340" height="64" />
+        </mxCell>
+        <mxCell id="ComandosConfiguracion-methods" value="~ comandos(KudosPostgresqlDAO dao, K…): Applicat…" vertex="1" parent="ComandosConfiguracion" style="html=1;whiteSpace=wrap;overflow=hidden;align=left;verticalAlign=top;spacingLeft=7;spacingTop=4;fontSize=11;strokeColor=#A8B6C2;fillColor=#FFFFFF;">
+          <mxGeometry as="geometry" x="0" y="107" width="340" height="74" />
+        </mxCell>
+        <mxCell id="DemostracionServicio" value="&amp;lt;&amp;lt;class&amp;gt;&amp;gt;&lt;br&gt;&lt;b&gt;DemostracionServicio&lt;/b&gt;" vertex="1" parent="1" style="swimlane;html=1;whiteSpace=wrap;startSize=43;horizontal=1;rounded=0;container=1;collapsible=0;fillColor=#E5EDF4;swimlaneFillColor=#FFFFFF;strokeColor=#63788C;fontColor=#253340;fontSize=13;">
+          <mxGeometry as="geometry" x="990" y="422.1" width="340" height="181" />
+        </mxCell>
+        <mxCell id="DemostracionServicio-attrs" value="− CLAVE: String&lt;br&gt;− USUARIOS: Usuario[]&lt;br&gt;− config: KudosConfiguracion&lt;br&gt;… 4 atributos en ficha" vertex="1" parent="DemostracionServicio" style="html=1;whiteSpace=wrap;overflow=hidden;align=left;verticalAlign=top;spacingLeft=7;spacingTop=4;fontSize=11;strokeColor=#A8B6C2;fillColor=#FFFFFF;">
+          <mxGeometry as="geometry" x="0" y="43" width="340" height="64" />
+        </mxCell>
+        <mxCell id="DemostracionServicio-methods" value="+ preparar(): boolean" vertex="1" parent="DemostracionServicio" style="html=1;whiteSpace=wrap;overflow=hidden;align=left;verticalAlign=top;spacingLeft=7;spacingTop=4;fontSize=11;strokeColor=#A8B6C2;fillColor=#FFFFFF;">
+          <mxGeometry as="geometry" x="0" y="107" width="340" height="74" />
+        </mxCell>
+        <mxCell id="Notificaciones" value="&amp;lt;&amp;lt;class&amp;gt;&amp;gt;&lt;br&gt;&lt;b&gt;Notificaciones&lt;/b&gt;" vertex="1" parent="1" style="swimlane;html=1;whiteSpace=wrap;startSize=43;horizontal=1;rounded=0;container=1;collapsible=0;fillColor=#E5EDF4;swimlaneFillColor=#FFFFFF;strokeColor=#63788C;fontColor=#253340;fontSize=13;">
+          <mxGeometry as="geometry" x="1467.5" y="422.1" width="340" height="181" />
+        </mxCell>
+        <mxCell id="Notificaciones-attrs" value="− dao: KudosPostgresqlDAO&lt;br&gt;− correo: JavaMailSender&lt;br&gt;− json: JsonMapper&lt;br&gt;… 4 atributos en ficha" vertex="1" parent="Notificaciones" style="html=1;whiteSpace=wrap;overflow=hidden;align=left;verticalAlign=top;spacingLeft=7;spacingTop=4;fontSize=11;strokeColor=#A8B6C2;fillColor=#FFFFFF;">
+          <mxGeometry as="geometry" x="0" y="43" width="340" height="64" />
+        </mxCell>
+        <mxCell id="Notificaciones-methods" value="+ entregar(): int" vertex="1" parent="Notificaciones" style="html=1;whiteSpace=wrap;overflow=hidden;align=left;verticalAlign=top;spacingLeft=7;spacingTop=4;fontSize=11;strokeColor=#A8B6C2;fillColor=#FFFFFF;">
+          <mxGeometry as="geometry" x="0" y="107" width="340" height="74" />
+        </mxCell>
+        <mxCell id="fuente" value="Fuente · backend/src/main/java/kudos. Las fichas del Excel incluyen las firmas completas." vertex="1" parent="1" style="html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;whiteSpace=wrap;fontSize=13;fontColor=#293745;">
+          <mxGeometry as="geometry" x="35" y="719.46" width="1450" height="25" />
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+  <diagram id="java-moderacion" name="Persistencia de moderación">
+    <mxGraphModel dx="1600" dy="1000" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="0" pageScale="1" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="title" value="UCO Kudos · Persistencia de moderación" vertex="1" parent="1" style="html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;whiteSpace=wrap;fontSize=24;fontStyle=1;fontColor=#253340;">
+          <mxGeometry as="geometry" x="28" y="18" width="1510" height="33" />
+        </mxCell>
+        <mxCell id="subtitle" value="La interfaz define las operaciones que usa el caso de uso." vertex="1" parent="1" style="html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;whiteSpace=wrap;fontSize=13;fontColor=#1F4E79;">
+          <mxGeometry as="geometry" x="28" y="57" width="1510" height="26" />
+        </mxCell>
+        <mxCell id="ModeracionServicio" value="&amp;lt;&amp;lt;class&amp;gt;&amp;gt;&lt;br&gt;&lt;b&gt;ModeracionServicio&lt;/b&gt;" vertex="1" parent="1" style="swimlane;html=1;whiteSpace=wrap;startSize=43;horizontal=1;rounded=0;container=1;collapsible=0;fillColor=#E5EDF4;swimlaneFillColor=#FFFFFF;strokeColor=#63788C;fontColor=#253340;fontSize=13;">
+          <mxGeometry as="geometry" x="35" y="124" width="335" height="180" />
+        </mxCell>
+        <mxCell id="ModeracionServicio-attrs" value="− repositorio: ModeracionRepositorio" vertex="1" parent="ModeracionServicio" style="html=1;whiteSpace=wrap;overflow=hidden;align=left;verticalAlign=top;spacingLeft=7;spacingTop=4;fontSize=11;strokeColor=#A8B6C2;fillColor=#FFFFFF;">
+          <mxGeometry as="geometry" x="0" y="43" width="335" height="45" />
+        </mxCell>
+        <mxCell id="ModeracionServicio-methods" value="+ reportar(…)&lt;br&gt;+ revisar(…)&lt;br&gt;+ vetar(…)&lt;br&gt;+ auditoria(…)" vertex="1" parent="ModeracionServicio" style="html=1;whiteSpace=wrap;overflow=hidden;align=left;verticalAlign=top;spacingLeft=7;spacingTop=4;fontSize=11;strokeColor=#A8B6C2;fillColor=#FFFFFF;">
+          <mxGeometry as="geometry" x="0" y="88" width="335" height="92" />
+        </mxCell>
+        <mxCell id="ModeracionRepositorio" value="&amp;lt;&amp;lt;interface&amp;gt;&amp;gt;&lt;br&gt;&lt;b&gt;ModeracionRepositorio&lt;/b&gt;" vertex="1" parent="1" style="swimlane;html=1;whiteSpace=wrap;startSize=43;horizontal=1;rounded=0;container=1;collapsible=0;fillColor=#E5EDF4;swimlaneFillColor=#FFFFFF;strokeColor=#63788C;fontColor=#253340;fontSize=13;">
+          <mxGeometry as="geometry" x="425" y="124" width="335" height="180" />
+        </mxCell>
+        <mxCell id="ModeracionRepositorio-attrs" value="" vertex="1" parent="ModeracionRepositorio" style="html=1;whiteSpace=wrap;overflow=hidden;align=left;verticalAlign=top;spacingLeft=7;spacingTop=4;fontSize=11;strokeColor=#A8B6C2;fillColor=#FFFFFF;">
+          <mxGeometry as="geometry" x="0" y="43" width="335" height="45" />
+        </mxCell>
+        <mxCell id="ModeracionRepositorio-methods" value="+ crearReporte(…)&lt;br&gt;+ cerrarRevision(…)&lt;br&gt;+ guardarVeto(…)&lt;br&gt;+ consultarAuditoria(…)" vertex="1" parent="ModeracionRepositorio" style="html=1;whiteSpace=wrap;overflow=hidden;align=left;verticalAlign=top;spacingLeft=7;spacingTop=4;fontSize=11;strokeColor=#A8B6C2;fillColor=#FFFFFF;">
+          <mxGeometry as="geometry" x="0" y="88" width="335" height="92" />
+        </mxCell>
+        <mxCell id="ModeracionPostgresqlRepositorio" value="&amp;lt;&amp;lt;class&amp;gt;&amp;gt;&lt;br&gt;&lt;b&gt;ModeracionPostgresqlRepositorio&lt;/b&gt;" vertex="1" parent="1" style="swimlane;html=1;whiteSpace=wrap;startSize=43;horizontal=1;rounded=0;container=1;collapsible=0;fillColor=#E5EDF4;swimlaneFillColor=#FFFFFF;strokeColor=#63788C;fontColor=#253340;fontSize=13;">
+          <mxGeometry as="geometry" x="815" y="124" width="335" height="180" />
+        </mxCell>
+        <mxCell id="ModeracionPostgresqlRepositorio-attrs" value="− dao: KudosPostgresqlDAO" vertex="1" parent="ModeracionPostgresqlRepositorio" style="html=1;whiteSpace=wrap;overflow=hidden;align=left;verticalAlign=top;spacingLeft=7;spacingTop=4;fontSize=11;strokeColor=#A8B6C2;fillColor=#FFFFFF;">
+          <mxGeometry as="geometry" x="0" y="43" width="335" height="45" />
+        </mxCell>
+        <mxCell id="ModeracionPostgresqlRepositorio-methods" value="+ crearReporte(…)&lt;br&gt;+ cerrarRevision(…)&lt;br&gt;+ guardarVeto(…)&lt;br&gt;+ consultarAuditoria(…)" vertex="1" parent="ModeracionPostgresqlRepositorio" style="html=1;whiteSpace=wrap;overflow=hidden;align=left;verticalAlign=top;spacingLeft=7;spacingTop=4;fontSize=11;strokeColor=#A8B6C2;fillColor=#FFFFFF;">
+          <mxGeometry as="geometry" x="0" y="88" width="335" height="92" />
+        </mxCell>
+        <mxCell id="KudosPostgresqlDAO" value="&amp;lt;&amp;lt;class&amp;gt;&amp;gt;&lt;br&gt;&lt;b&gt;KudosPostgresqlDAO&lt;/b&gt;" vertex="1" parent="1" style="swimlane;html=1;whiteSpace=wrap;startSize=43;horizontal=1;rounded=0;container=1;collapsible=0;fillColor=#E5EDF4;swimlaneFillColor=#FFFFFF;strokeColor=#63788C;fontColor=#253340;fontSize=13;">
+          <mxGeometry as="geometry" x="1205" y="124" width="335" height="180" />
+        </mxCell>
+        <mxCell id="KudosPostgresqlDAO-attrs" value="− jdbc: JdbcTemplate" vertex="1" parent="KudosPostgresqlDAO" style="html=1;whiteSpace=wrap;overflow=hidden;align=left;verticalAlign=top;spacingLeft=7;spacingTop=4;fontSize=11;strokeColor=#A8B6C2;fillColor=#FFFFFF;">
+          <mxGeometry as="geometry" x="0" y="43" width="335" height="45" />
+        </mxCell>
+        <mxCell id="KudosPostgresqlDAO-methods" value="+ transaccion(…)&lt;br&gt;+ todos(…)&lt;br&gt;+ ejecutar(…)&lt;br&gt;+ registrar(…)" vertex="1" parent="KudosPostgresqlDAO" style="html=1;whiteSpace=wrap;overflow=hidden;align=left;verticalAlign=top;spacingLeft=7;spacingTop=4;fontSize=11;strokeColor=#A8B6C2;fillColor=#FFFFFF;">
+          <mxGeometry as="geometry" x="0" y="88" width="335" height="92" />
+        </mxCell>
+        <mxCell id="edge-ModeracionServicio-ModeracionRepositorio" value="" edge="1" parent="1" source="ModeracionServicio" target="ModeracionRepositorio" style="edgeStyle=none;rounded=0;html=1;dashed=1;endArrow=open;endFill=0;strokeColor=#787F85;exitX=1;exitY=0.5;entryX=0;entryY=0.5;exitPerimeter=0;entryPerimeter=0;">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="edge-ModeracionPostgresqlRepositorio-ModeracionRepositorio" value="" edge="1" parent="1" source="ModeracionPostgresqlRepositorio" target="ModeracionRepositorio" style="edgeStyle=none;rounded=0;html=1;dashed=1;endArrow=block;endFill=0;strokeColor=#787F85;exitX=0;exitY=0.5;entryX=1;entryY=0.5;exitPerimeter=0;entryPerimeter=0;">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="edge-ModeracionPostgresqlRepositorio-KudosPostgresqlDAO" value="" edge="1" parent="1" source="ModeracionPostgresqlRepositorio" target="KudosPostgresqlDAO" style="edgeStyle=none;rounded=0;html=1;dashed=1;endArrow=open;endFill=0;strokeColor=#787F85;exitX=1;exitY=0.5;entryX=0;entryY=0.5;exitPerimeter=0;entryPerimeter=0;">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="fuente" value="La fachada delimita la transacción. El repositorio y el acceso compartido al contenido usan la misma conexión JDBC." vertex="1" parent="1" style="html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;whiteSpace=wrap;fontSize=13;fontColor=#293745;">
+          <mxGeometry as="geometry" x="28" y="355" width="1510" height="32" />
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>
