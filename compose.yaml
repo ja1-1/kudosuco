@@ -11,7 +11,7 @@ services:
     volumes:
       - postgres-datos:/var/lib/postgresql
     healthcheck:
-      test: ["CMD-SHELL", "pg_isready -U kudos -d kudos"]
+      test: ["CMD-SHELL", "pg_isready -h 127.0.0.1 -U kudos -d kudos"]
       interval: 2s
       timeout: 3s
       retries: 30
@@ -30,10 +30,27 @@ services:
       KUDOS_VERIFICATION_KEY: ${KUDOS_VERIFICATION_KEY:-}
     ports:
       - "127.0.0.1:${SERVER_PORT:-8084}:8080"
+    healthcheck:
+      test:
+        - CMD
+        - bash
+        - -ec
+        - |
+          origen="$${KUDOS_ORIGIN#https://}"
+          origen="$${origen:-127.0.0.1:8080}"
+          exec 3<>/dev/tcp/127.0.0.1/8080
+          printf 'GET /api/health HTTP/1.1\r\nHost: %s\r\nConnection: close\r\n\r\n' "$$origen" >&3
+          IFS= read -r respuesta <&3
+          [[ "$$respuesta" == "HTTP/1.1 200 "* ]]
+      interval: 2s
+      timeout: 3s
+      retries: 30
+      start_period: 10s
   frontend:
     build: ./frontend
     depends_on:
-      - backend
+      backend:
+        condition: service_healthy
     environment:
       API_TARGET: http://backend:8080
     ports:

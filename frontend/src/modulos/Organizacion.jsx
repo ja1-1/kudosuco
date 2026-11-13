@@ -106,7 +106,7 @@ export async function organization(ctx) {
     governing.includes(user.role) && panel("Historial de cargos en mi ámbito",
       table(["Persona", "Cargo", "Unidad", "Desde", "Hasta"], org.assignments.map((row) => [
         row.name, roles[row.role], facultyNames.get(row.faculty_id) || programNames.get(row.program_id) || "Universidad",
-        date(row.started_at), row.ended_at ? date(row.ended_at) : chip("Vigente", "green"),
+        date(row.started_at), row.ended_at ? date(row.ended_at) : chip("Vigente"),
       ]), "Asignaciones")),
     administrator && panel("Configuración global", form([
       field("Nombre visible", "platform_name", { value: org.settings.platform_name, required: true, maxlength: 80 }),

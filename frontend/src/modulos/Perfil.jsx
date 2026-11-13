@@ -11,7 +11,7 @@ export async function profile(ctx) {
     const url = `/me/verification/${channel}`;
     return el("section", { class: "contact" },
       el("h3", {}, label),
-      el("p", {}, user[channel], " · ", chip(verified ? "Verificado" : "Pendiente", verified ? "green" : "gold")),
+      el("p", {}, user[channel], " · ", chip(verified ? "Verificado" : "Pendiente")),
       !verified && button("Solicitar código", async () => {
         try {
           await ctx.api(url, "POST");
@@ -25,7 +25,7 @@ export async function profile(ctx) {
       }));
   });
   const approved = user.status === "APPROVED";
-  return page(section(user.name, chip(statuses[user.status], user.status === "ACTIVE" ? "green" : "gold"), roles[user.role]),
+  return page(section(user.name, chip(statuses[user.status]), roles[user.role]),
     panel("Verificación de contactos", contactCards,
       user.status === "PENDING" && el("p", {}, "Pendiente de aprobación institucional."),
       approved && user.email_verified && user.phone_verified && form([], "Activar mi cuenta", async () => {

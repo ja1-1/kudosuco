@@ -66,6 +66,16 @@ public class IdentidadServicio {
     }
 
     public Map<String, Object> registrar(Map<String, Object> datos, Map<String, Object> actor, boolean inicial) {
+        return registrar(datos, actor, inicial, false);
+    }
+
+    Map<String, Object> registrarDemostracion(Map<String, Object> datos, Map<String, Object> actor, boolean inicial) {
+        exigir(config.demostracion(), "Activa el modo demostración.");
+        return registrar(datos, actor, inicial, true);
+    }
+
+    private Map<String, Object> registrar(Map<String, Object> datos, Map<String, Object> actor, boolean inicial,
+                                         boolean demostracion) {
         String perfil = opcion(datos.get("role"), ROLES, "Rol desconocido.");
         if (actor != null) {
             rol(actor, Set.of("ADMIN"));
@@ -99,12 +109,13 @@ public class IdentidadServicio {
         }
         String fecha = ahora();
         Object actorId = actor == null ? null : actor.get("id");
+        String clave = demostracion ? hashNuevaClave(DemostracionServicio.CLAVE) : nuevaClave(datos.get("password"));
         boolean aprobado = actor != null || inicial;
         String estado = aprobado ? "APPROVED" : "PENDING";
         long id = dao.insertar("""
                 INSERT INTO accounts(name,email,phone,password_hash,role,faculty_id,program_id,status,approved_by,
                     approved_at,created_at) VALUES (?,?,?,?,?,?,?,?,?,?,?)
-                """, nombre, contacto.correo(), contacto.celular(), nuevaClave(datos.get("password")), perfil, facultad,
+                """, nombre, contacto.correo(), contacto.celular(), clave, perfil, facultad,
                 perfil.equals("PROGRAM") ? programa : null, estado, actorId, aprobado ? fecha : null, fecha);
         dao.registrar("UsuarioRegistrado", actorId == null ? id : actorId, "account", id, datos("role", perfil));
         for (long programaSolicitado : programas) {
@@ -419,6 +430,10 @@ public class IdentidadServicio {
     private String nuevaClave(Object valor) {
         String clave = texto(valor, "Contraseña", 128);
         exigir(clave.codePointCount(0, clave.length()) >= 12, "Usa una contraseña de al menos 12 caracteres.");
+        return hashNuevaClave(clave);
+    }
+
+    String hashNuevaClave(String clave) {
         return hashClave(clave, HexFormat.of().formatHex(bytes(16)));
     }
 

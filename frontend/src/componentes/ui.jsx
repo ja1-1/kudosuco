@@ -45,8 +45,8 @@ export function link(label, url, style = "") {
   return el("a", { href: url, class: style }, label);
 }
 
-export function chip(label, tone = "") {
-  return el("span", { class: `chip ${tone}` }, label);
+export function chip(label) {
+  return el("span", { class: "chip" }, label);
 }
 
 export function section(title, action = null, description = "") {

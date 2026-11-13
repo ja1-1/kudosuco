@@ -13,7 +13,7 @@ import static kudos.servicio.Datos.datos;
 
 @Service
 public class DemostracionServicio {
-    private static final String CLAVE = "Demo-Kudos-2026!";
+    static final String CLAVE = "1234";
     private static final Usuario[] USUARIOS = {
         new Usuario("admin", "Laura Vélez", "ADMIN", null),
         new Usuario("rector", "Gabriel Restrepo", "RECTOR", null),
@@ -46,12 +46,28 @@ public class DemostracionServicio {
         exigir(config.demostracion(), "Activa el modo demostración.");
         return dao.transaccion(true, () -> {
             if (dao.uno("SELECT 1 FROM audit WHERE event='IdentidadDemoPreparada' LIMIT 1") != null) {
+                actualizarClavesAnteriores();
                 return false;
             }
             exigir(dao.uno("SELECT id FROM accounts LIMIT 1") == null, "Usa una base vacía para la demostración.", 409);
             cargar();
             return true;
         });
+    }
+
+    private void actualizarClavesAnteriores() {
+        var cuentas = dao.todos("""
+                SELECT DISTINCT subject_id FROM audit
+                WHERE event='IdentidadDemoPreparada' AND subject='account'
+                AND NOT EXISTS (SELECT 1 FROM audit WHERE event='ClaveDemoActualizada'
+                    OR (event='IdentidadDemoPreparada' AND facts::jsonb @> '{"clave_demo":2}'))
+                """);
+        for (var fila : cuentas) {
+            long id = (long) fila.get("subject_id");
+            dao.ejecutar("UPDATE accounts SET password_hash=? WHERE id=?", identidad.hashNuevaClave(CLAVE), id);
+            dao.ejecutar("DELETE FROM sessions WHERE account_id=?", id);
+            dao.registrar("ClaveDemoActualizada", null, "account", id, Map.of());
+        }
     }
 
     private void cargar() {
@@ -61,15 +77,15 @@ public class DemostracionServicio {
         int indice = 1;
         for (Usuario usuario : USUARIOS) {
             boolean inicial = usuario.rol().equals("ADMIN");
-            var registro = identidad.registrar(datos("role", usuario.rol(), "name", usuario.nombre(),
-                    "email", usuario.alias() + "@" + config.institution(), "password", CLAVE,
+            var registro = identidad.registrarDemostracion(datos("role", usuario.rol(), "name", usuario.nombre(),
+                    "email", usuario.alias() + "@" + config.institution(),
                     "phone", String.format(Locale.ROOT, "+573000000%03d", indice++),
                     "faculty_id", facultad, "program_id", programa),
                     usuario.rol().equals("RECTOR") ? actores.get("ADMIN") : null, inicial);
             long id = (long) registro.get("id");
             if (usuario.aprobador() != null) identidad.aprobar(actores.get(usuario.aprobador()), id);
             dao.ejecutar("UPDATE accounts SET email_verified=1,phone_verified=1 WHERE id=?", id);
-            dao.registrar("IdentidadDemoPreparada", null, "account", id, Map.of());
+            dao.registrar("IdentidadDemoPreparada", null, "account", id, Map.of("clave_demo", 2));
             var cuenta = identidad.activar(identidad.cuenta(id), null, null);
             actores.put(usuario.alias(), cuenta);
             actores.put(usuario.rol(), cuenta);

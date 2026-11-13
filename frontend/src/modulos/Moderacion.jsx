@@ -8,12 +8,12 @@ export async function moderation(ctx) {
   const cards = result.items.map((item) => {
     const kind = item.kind === "KUDO" ? "Kudo" : "Réplica";
     if (isHistory) {
-      return panel(`${kind} #${item.content_id}`, chip("Vetado", "red"),
+      return panel(`${kind} #${item.content_id}`, chip("Vetado"),
         el("p", { class: "muted" }, `${item.moderator} · ${roles[item.moderator_role]} · ${date(item.created_at)}`),
         el("p", {}, item.reason), disclosure("Ver contenido conservado", el("p", { class: "body-copy" }, item.body)));
     }
     const endpoint = `/moderation/reports/${item.id}`;
-    return panel(`Reporte #${item.id} · ${kind} #${item.content_id}`, chip(statuses[item.state], "gold"),
+    return panel(`Reporte #${item.id} · ${kind} #${item.content_id}`, chip(statuses[item.state]),
       el("p", { class: "muted" }, `${item.reporter} · ${date(item.created_at)}`),
       el("p", {}, el("strong", {}, reasons[item.reason]), item.detail && ` · ${item.detail}`),
       disclosure("Ver evidencia", el("p", {}, `Autor: ${item.author}`), el("p", { class: "body-copy" }, item.body)),

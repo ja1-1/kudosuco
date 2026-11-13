@@ -21,7 +21,7 @@ export async function categories(ctx) {
   return page(section("Categorías"),
     canEdit && disclosure("Crear categoría", categoryForm(ctx)),
     items.length ? el("div", { class: "grid" }, items.map((item) =>
-      panel(item.name, chip(item.active ? "Activa" : "Inactiva", item.active ? "green" : "gold"),
+      panel(item.name, chip(item.active ? "Activa" : "Inactiva"),
         item.description && el("p", { class: "muted" }, item.description),
         canEdit && disclosure("Editar categoría", categoryForm(ctx, item)))))
       : empty("Sin categorías."));

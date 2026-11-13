@@ -8,7 +8,7 @@ function ratingLabel(item) {
 
 function kudoCard(item) {
   return el("article", { class: "kudo-card" },
-    el("div", { class: "card-meta" }, chip(item.category_name, "green"), el("time", { datetime: item.created_at }, date(item.created_at))),
+    el("div", { class: "card-meta" }, chip(item.category_name), el("time", { datetime: item.created_at }, date(item.created_at))),
     el("p", {}, link(item.author, `#inicio?sent=${item.author_id}`), " reconoció a ", link(item.recipient, `#inicio?received=${item.recipient_id}`)),
     el("p", { class: "body-copy preview" }, item.body),
     el("div", { class: "card-footer" }, el("span", { class: "stars" }, ratingLabel(item)),
@@ -184,7 +184,7 @@ export async function detail(ctx, id) {
   }
   return page(section("Conversación", link("← Comunidad", "#inicio", "button secondary")),
     el("article", { class: "panel detail-kudo" },
-      el("div", { class: "card-meta" }, chip(kudo.category_name, "green"), el("time", { datetime: kudo.created_at }, date(kudo.created_at))),
+      el("div", { class: "card-meta" }, chip(kudo.category_name), el("time", { datetime: kudo.created_at }, date(kudo.created_at))),
       el("p", {}, el("strong", {}, kudo.author), " reconoció a ", el("strong", {}, kudo.recipient)),
       el("p", { class: "body-copy" }, kudo.body),
       el("div", { class: "card-footer" }, el("span", { class: "stars" }, ratingLabel(kudo)),
